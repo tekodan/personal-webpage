@@ -109,12 +109,14 @@ export default function HomeLandingPage() {
           >
             Contact by email
           </Link>
-          <Link
-            href={siteMetadata.linkedin}
-            className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-800 transition hover:border-gray-400 dark:border-gray-700 dark:text-gray-100 dark:hover:border-gray-600"
-          >
-            View LinkedIn
-          </Link>
+          {siteMetadata.linkedin && (
+            <Link
+              href={siteMetadata.linkedin}
+              className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-800 transition hover:border-gray-400 dark:border-gray-700 dark:text-gray-100 dark:hover:border-gray-600"
+            >
+              View LinkedIn
+            </Link>
+          )}
         </div>
       </section>
     </div>
