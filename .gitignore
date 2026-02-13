@@ -3,12 +3,13 @@
 # dependencies
 /node_modules
 /.pnp
+/.idea
 .pnp.js
 /.yarn/*
 !/.yarn/releases
 !/.yarn/plugins
 !/.yarn/sdks
-
+.idea
 # testing
 /coverage
 
@@ -45,3 +46,5 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
+
+AGENTS.md
