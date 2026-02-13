@@ -3,14 +3,11 @@ import headerNavLinks from '@/data/headerNavLinks'
 import Image from 'next/image'
 import Link from './Link'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
-  if (siteMetadata.stickyNav) {
-    headerClass += ' sticky top-0 z-50'
-  }
+  const headerClass =
+    'sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-200/70 bg-white/88 py-6 backdrop-blur-sm supports-[backdrop-filter]:bg-white/75 dark:border-gray-800/70 dark:bg-gray-950/82 dark:supports-[backdrop-filter]:bg-gray-950/70'
 
   return (
     <header className={headerClass}>
@@ -28,7 +25,7 @@ const Header = () => {
           </div>
         </div>
       </Link>
-      <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
+      <div className="flex items-center space-x-3 leading-5 sm:-mr-4 sm:space-x-5">
         <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto sm:flex md:max-w-72 lg:max-w-96">
           {headerNavLinks
             .filter((link) => link.href !== '/')
@@ -36,14 +33,13 @@ const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-900 dark:text-gray-100"
+                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-800 dark:text-gray-200"
               >
                 {link.title}
               </Link>
             ))}
         </div>
         <SearchButton />
-        <ThemeSwitch />
         <MobileNav />
       </div>
     </header>

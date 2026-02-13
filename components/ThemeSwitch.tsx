@@ -17,7 +17,7 @@ const Sun = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="group:hover:text-gray-100 h-6 w-6"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -31,7 +31,7 @@ const Moon = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="group:hover:text-gray-100 h-6 w-6"
+    className="h-5 w-5"
   >
     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
   </svg>
@@ -45,14 +45,14 @@ const Monitor = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="group:hover:text-gray-100 h-6 w-6"
+    className="h-5 w-5"
   >
     <rect x="3" y="3" width="14" height="10" rx="2" ry="2"></rect>
     <line x1="7" y1="17" x2="13" y2="17"></line>
     <line x1="10" y1="13" x2="10" y2="17"></line>
   </svg>
 )
-const Blank = () => <svg className="h-6 w-6" />
+const Blank = () => <svg className="h-5 w-5" />
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -64,8 +64,11 @@ const ThemeSwitch = () => {
   return (
     <div className="flex items-center">
       <Menu as="div" className="relative inline-block text-left">
-        <div className="hover:text-primary-500 dark:hover:text-primary-400 flex items-center justify-center">
-          <MenuButton aria-label="Theme switcher">
+        <div className="hover:text-primary-500 dark:hover:text-primary-400 text-gray-700/85 transition-colors duration-200 dark:text-gray-300/80">
+          <MenuButton
+            aria-label="Theme switcher"
+            className="focus-visible:outline-primary-500 rounded-md p-1 focus-visible:outline-2"
+          >
             {mounted ? resolvedTheme === 'dark' ? <Moon /> : <Sun /> : <Blank />}
           </MenuButton>
         </div>
