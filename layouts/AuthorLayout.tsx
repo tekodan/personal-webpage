@@ -2,15 +2,13 @@ import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
-import siteMetadata from '@/data/siteMetadata'
-
 interface Props {
   children: ReactNode
   content: Omit<Authors, '_id' | '_raw' | 'body'>
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, github, skills } = content
+  const { name, avatar, occupation, company, github, skills, email, linkedin } = content
   const topSkills = skills?.slice(0, 12) || []
   const remainingSkills = skills?.slice(12) || []
 
@@ -43,9 +41,9 @@ export default function AuthorLayout({ children, content }: Props) {
                 {company && <p className="mt-1 text-sm leading-relaxed text-white/70">{company}</p>}
               </div>
               <div className="flex items-center gap-3 opacity-70 transition-opacity hover:opacity-100">
-                <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={5} />
+                <SocialIcon kind="mail" href={`mailto:${email}`} size={5} />
                 <SocialIcon kind="github" href={github} size={5} />
-                <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={5} />
+                <SocialIcon kind="linkedin" href={linkedin} size={5} />
               </div>
 
               {skills && skills.length > 0 && (
@@ -75,6 +73,20 @@ export default function AuthorLayout({ children, content }: Props) {
             <section className="text-justify md:border-l md:border-white/10 md:pl-10">
               <div className="prose prose-invert max-w-[65ch] leading-[1.85] [&_h2]:mt-0 [&_h2]:mb-0 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-white [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-white [&_li]:text-justify [&_p]:mt-6 [&_p]:max-w-[65ch] [&_p]:text-justify [&_p]:leading-[1.85] [&_p]:text-white/70">
                 {children}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="/api/cv/pdf"
+                  className="inline-flex items-center rounded-md border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-[#9DFF00] hover:text-[#9DFF00]"
+                >
+                  Download CV (PDF)
+                </a>
+                <a
+                  href="/api/cv"
+                  className="inline-flex items-center rounded-md border border-white/10 px-4 py-2 text-sm font-medium text-white/50 transition hover:text-white/80"
+                >
+                  Download CV (.md)
+                </a>
               </div>
             </section>
           </div>

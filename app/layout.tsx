@@ -9,6 +9,7 @@ import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
+import appConfig from '@/data/appConfig'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 
@@ -36,9 +37,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: './',
-    types: {
-      'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
-    },
+    types: appConfig.features.blog
+      ? {
+          'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
+        }
+      : {},
   },
   robots: {
     index: true,
@@ -92,15 +95,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+      {appConfig.features.blog && (
+        <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
+      )}
       <body className="bg-gray-950 pl-[calc(100vw-100%)] leading-relaxed text-white antialiased">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-              <Header />
-              <main className="mb-auto">{children}</main>
-            </SearchProvider>
+            {appConfig.features.search ? (
+              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+                <Header />
+                <main className="mb-auto">{children}</main>
+              </SearchProvider>
+            ) : (
+              <>
+                <Header />
+                <main className="mb-auto">{children}</main>
+              </>
+            )}
             <Footer />
           </SectionContainer>
         </ThemeProviders>

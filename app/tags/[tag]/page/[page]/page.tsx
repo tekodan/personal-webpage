@@ -4,10 +4,15 @@ import ListLayout from '@/layouts/ListLayoutWithTags'
 import { allBlogs } from 'contentlayer/generated'
 import tagData from 'app/tag-data.json'
 import { notFound } from 'next/navigation'
+import appConfig from '@/data/appConfig'
 
 const POSTS_PER_PAGE = 5
 
 export const generateStaticParams = async () => {
+  if (!appConfig.features.blog || !appConfig.features.tags) {
+    return []
+  }
+
   const tagCounts = tagData as Record<string, number>
   return Object.keys(tagCounts).flatMap((tag) => {
     const postCount = tagCounts[tag]
@@ -20,6 +25,10 @@ export const generateStaticParams = async () => {
 }
 
 export default async function TagPage(props: { params: Promise<{ tag: string; page: string }> }) {
+  if (!appConfig.features.blog || !appConfig.features.tags) {
+    return notFound()
+  }
+
   const params = await props.params
   const tag = decodeURI(params.tag)
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)

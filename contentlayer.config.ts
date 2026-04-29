@@ -1,4 +1,9 @@
-import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer2/source-files'
+import {
+  defineDocumentType,
+  defineNestedType,
+  ComputedFields,
+  makeSource,
+} from 'contentlayer2/source-files'
 import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
 import { slug } from 'github-slugger'
@@ -25,6 +30,44 @@ import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import prettier from 'prettier'
+
+const ExperienceEntry = defineNestedType(() => ({
+  name: 'ExperienceEntry',
+  fields: {
+    title: { type: 'string', required: true },
+    company: { type: 'string', required: true },
+    location: { type: 'string' },
+    period: { type: 'string', required: true },
+    bullets: { type: 'list', of: { type: 'string' } },
+  },
+}))
+
+const EducationEntry = defineNestedType(() => ({
+  name: 'EducationEntry',
+  fields: {
+    degree: { type: 'string', required: true },
+    institution: { type: 'string', required: true },
+    year: { type: 'string' },
+  },
+}))
+
+const AwardEntry = defineNestedType(() => ({
+  name: 'AwardEntry',
+  fields: {
+    title: { type: 'string', required: true },
+    organization: { type: 'string' },
+    year: { type: 'string' },
+  },
+}))
+
+const CertificationEntry = defineNestedType(() => ({
+  name: 'CertificationEntry',
+  fields: {
+    name: { type: 'string', required: true },
+    institution: { type: 'string' },
+    date: { type: 'string' },
+  },
+}))
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -137,12 +180,25 @@ export const Authors = defineDocumentType(() => ({
     avatar: { type: 'string' },
     occupation: { type: 'string' },
     company: { type: 'string' },
+    availability: { type: 'string' },
+    introduction: { type: 'string' },
+    call_to_action: { type: 'string' },
+    heroTitlePrefix: { type: 'string' },
+    heroSubtitle: { type: 'string' },
+    aboutTitle: { type: 'string' },
+    aboutSummary: { type: 'string' },
+    contactTitle: { type: 'string' },
+    contactSummary: { type: 'string' },
     email: { type: 'string' },
     twitter: { type: 'string' },
     bluesky: { type: 'string' },
     linkedin: { type: 'string' },
     github: { type: 'string' },
     skills: { type: 'list', of: { type: 'string' } },
+    experience: { type: 'list', of: ExperienceEntry },
+    education: { type: 'list', of: EducationEntry },
+    awards: { type: 'list', of: AwardEntry },
+    certifications: { type: 'list', of: CertificationEntry },
     layout: { type: 'string' },
   },
   computedFields,

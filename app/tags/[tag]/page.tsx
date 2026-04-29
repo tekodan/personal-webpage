@@ -6,12 +6,18 @@ import { allBlogs } from 'contentlayer/generated'
 import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
+import appConfig from '@/data/appConfig'
+import { notFound } from 'next/navigation'
 
 const POSTS_PER_PAGE = 5
 
 export async function generateMetadata(props: {
   params: Promise<{ tag: string }>
 }): Promise<Metadata> {
+  if (!appConfig.features.blog || !appConfig.features.tags) {
+    return genPageMetadata({ title: 'Not found' })
+  }
+
   const params = await props.params
   const tag = decodeURI(params.tag)
   return genPageMetadata({
@@ -27,6 +33,10 @@ export async function generateMetadata(props: {
 }
 
 export const generateStaticParams = async () => {
+  if (!appConfig.features.blog || !appConfig.features.tags) {
+    return []
+  }
+
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   return tagKeys.map((tag) => ({
@@ -35,6 +45,10 @@ export const generateStaticParams = async () => {
 }
 
 export default async function TagPage(props: { params: Promise<{ tag: string }> }) {
+  if (!appConfig.features.blog || !appConfig.features.tags) {
+    return notFound()
+  }
+
   const params = await props.params
   const tag = decodeURI(params.tag)
   const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1)
