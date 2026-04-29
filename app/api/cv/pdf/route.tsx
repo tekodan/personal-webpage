@@ -14,10 +14,10 @@ export async function GET() {
   const avatarSrc = content.avatar ? path.join(process.cwd(), 'public', content.avatar) : undefined
 
   const buffer = await renderToBuffer(<CVDocument author={{ ...content, avatarSrc }} />)
+  const blob = new Blob([buffer], { type: 'application/pdf' })
 
-  return new Response(new Uint8Array(buffer), {
+  return new Response(blob, {
     headers: {
-      'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="${filename}"`,
     },
   })
