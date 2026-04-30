@@ -77,10 +77,15 @@ function renderAwards(awards: Authors['awards'] | undefined): string {
 function renderCertifications(certifications: Authors['certifications'] | undefined): string {
   if (!certifications?.length) return ''
   return certifications
-    .map(
-      (c) =>
-        `- ${c.name}${c.institution ? `, ${c.institution}` : ''}${c.date ? ` (${c.date})` : ''}`
-    )
+    .map((c) => {
+      const meta = [c.institution, c.date].filter(Boolean).join(', ')
+      const idPart = c.issuerId
+        ? c.verifyUrl
+          ? ` · [ID: ${c.issuerId}](${c.verifyUrl})`
+          : ` · ID: ${c.issuerId}`
+        : ''
+      return `- **${c.name}**${meta ? ` — ${meta}` : ''}${idPart}`
+    })
     .join('\n')
 }
 

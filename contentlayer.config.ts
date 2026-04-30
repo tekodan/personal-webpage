@@ -64,8 +64,10 @@ const CertificationEntry = defineNestedType(() => ({
   name: 'CertificationEntry',
   fields: {
     name: { type: 'string', required: true },
-    institution: { type: 'string' },
+    institution: { type: 'string', required: true },
     date: { type: 'string' },
+    issuerId: { type: 'string' },
+    verifyUrl: { type: 'string' },
   },
 }))
 

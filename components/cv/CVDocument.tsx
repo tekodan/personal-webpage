@@ -40,6 +40,8 @@ export interface CVAuthor {
     name: string
     institution?: string
     date?: string
+    issuerId?: string
+    verifyUrl?: string
   }[]
 }
 
@@ -337,6 +339,18 @@ export function CVDocument({ author }: { author: CVAuthor }) {
                     {c.institution}
                     {c.date ? ` · ${c.date}` : ''}
                   </Text>
+                  {c.issuerId && (
+                    <Text style={s.certSub}>
+                      {'ID: '}
+                      {c.verifyUrl ? (
+                        <Link src={c.verifyUrl} style={{ color: ACCENT }}>
+                          {c.issuerId}
+                        </Link>
+                      ) : (
+                        c.issuerId
+                      )}
+                    </Text>
+                  )}
                 </View>
               ))}
             </View>
