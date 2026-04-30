@@ -21,6 +21,7 @@ export default function HomeLandingPage() {
     email,
     github,
     linkedin,
+    telegram,
     heroTitlePrefix,
     heroSubtitle,
     aboutTitle,
@@ -95,6 +96,7 @@ export default function HomeLandingPage() {
                 <SocialIcon kind="mail" href={`mailto:${email}`} size={5} />
                 <SocialIcon kind="github" href={github} size={5} />
                 <SocialIcon kind="linkedin" href={linkedin} size={5} />
+                <SocialIcon kind="telegram" href={telegram} size={5} />
               </div>
             </div>
             <div className="max-w-[65ch] md:col-span-2 md:border-l md:border-white/10 md:pl-12">
@@ -149,6 +151,14 @@ export default function HomeLandingPage() {
                   className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
                 >
                   View LinkedIn
+                </Link>
+              )}
+              {telegram && (
+                <Link
+                  href={telegram}
+                  className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                >
+                  Message Telegram
                 </Link>
               )}
             </div>

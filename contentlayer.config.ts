@@ -69,6 +69,16 @@ const CertificationEntry = defineNestedType(() => ({
   },
 }))
 
+const ProjectEntry = defineNestedType(() => ({
+  name: 'ProjectEntry',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    tech: { type: 'list', of: { type: 'string' } },
+    href: { type: 'string' },
+  },
+}))
+
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -193,8 +203,10 @@ export const Authors = defineDocumentType(() => ({
     twitter: { type: 'string' },
     bluesky: { type: 'string' },
     linkedin: { type: 'string' },
+    telegram: { type: 'string' },
     github: { type: 'string' },
     skills: { type: 'list', of: { type: 'string' } },
+    projects: { type: 'list', of: ProjectEntry },
     experience: { type: 'list', of: ExperienceEntry },
     education: { type: 'list', of: EducationEntry },
     awards: { type: 'list', of: AwardEntry },

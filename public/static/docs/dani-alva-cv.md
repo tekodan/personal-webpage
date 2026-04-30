@@ -9,9 +9,10 @@
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
 
 Location: Granada, Spain · Available worldwide (UTC+1/+2)
-Email: danialvadev@proton.me
-LinkedIn: https://www.linkedin.com/in/dani-alvarez-230354126/
-Website: https://danialva.com
+Email: [danialvadev@proton.me](mailto:danialvadev@proton.me)
+LinkedIn: [linkedin.com/in/dani-alvarez230354126/](https://www.linkedin.com/in/dani-alvarez230354126/)
+GitHub: [github.com/tekodan](https://github.com/tekodan)
+Website: [danialva.com](https://danialva.com)
 
 ---
 

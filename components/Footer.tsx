@@ -4,7 +4,7 @@ import { coreContent } from 'pliny/utils/contentlayer'
 
 export default function Footer() {
   const author = allAuthors.find((p) => p.slug === 'default') as Authors
-  const { email, github, linkedin } = coreContent(author)
+  const { email, github, linkedin, telegram } = coreContent(author)
 
   return (
     <footer>
@@ -13,6 +13,7 @@ export default function Footer() {
           <SocialIcon kind="mail" href={`mailto:${email}`} size={6} />
           <SocialIcon kind="github" href={github} size={6} />
           <SocialIcon kind="linkedin" href={linkedin} size={6} />
+          <SocialIcon kind="telegram" href={telegram} size={6} />
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">next.js powered</div>
       </div>

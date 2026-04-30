@@ -9,9 +9,16 @@ export interface CVAuthor {
   availability?: string
   email?: string
   linkedin?: string
+  telegram?: string
   github?: string
   introduction?: string
   skills?: string[]
+  projects?: {
+    title: string
+    description: string
+    tech?: string[]
+    href?: string
+  }[]
   experience?: {
     title: string
     company: string
@@ -54,14 +61,15 @@ const s = StyleSheet.create({
   },
 
   // Header
-  header: { flexDirection: 'row', gap: 16, marginBottom: 14, alignItems: 'flex-start' },
+  header: { flexDirection: 'row', gap: 16, marginBottom: 12, alignItems: 'flex-start' },
   avatar: { width: 72, height: 72, borderRadius: 36 },
   headerText: { flex: 1 },
   name: { fontSize: 22, fontFamily: 'Helvetica-Bold', color: DARK, letterSpacing: 0.3 },
-  occupation: { fontSize: 11, color: ACCENT, fontFamily: 'Helvetica-Bold', marginTop: 6 },
+  occupation: { fontSize: 11, color: ACCENT, fontFamily: 'Helvetica-Bold', marginTop: 12 },
   company: { fontSize: 9, color: MUTED, marginTop: 2 },
-  contactRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 5 },
-  contactItem: { fontSize: 8, color: MUTED },
+  contactRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 5 },
+  contactItem: { flexDirection: 'row', alignItems: 'center' },
+  contactLabel: { fontSize: 8, color: MUTED },
   contactLink: { fontSize: 8, color: ACCENT },
   availability: { fontSize: 8, color: MUTED, marginTop: 3, fontFamily: 'Helvetica-Oblique' },
 
@@ -81,6 +89,12 @@ const s = StyleSheet.create({
 
   // Summary
   paragraph: { fontSize: 9, color: DARK, lineHeight: 1.6 },
+
+  // Projects
+  projectEntry: { marginBottom: 8 },
+  projectTitle: { fontSize: 9.5, fontFamily: 'Helvetica-Bold', color: DARK },
+  projectDesc: { fontSize: 8.5, color: '#374151', marginTop: 1, lineHeight: 1.4 },
+  projectTech: { fontSize: 7.5, color: MUTED, marginTop: 2, fontFamily: 'Helvetica-Oblique' },
 
   // Experience
   expEntry: { marginBottom: 9 },
@@ -148,9 +162,11 @@ export function CVDocument({ author }: { author: CVAuthor }) {
     availability,
     email,
     linkedin,
+    telegram,
     github,
     introduction,
     skills,
+    projects,
     experience,
     education,
     awards,
@@ -169,19 +185,36 @@ export function CVDocument({ author }: { author: CVAuthor }) {
             {company && <Text style={s.company}>{company}</Text>}
             <View style={s.contactRow}>
               {email && (
-                <Link src={`mailto:${email}`} style={s.contactLink}>
-                  {email}
-                </Link>
+                <View style={s.contactItem}>
+                  <Text style={s.contactLabel}>Email: </Text>
+                  <Link src={`mailto:${email}`} style={s.contactLink}>
+                    {email}
+                  </Link>
+                </View>
               )}
               {linkedin && (
-                <Link src={linkedin} style={s.contactLink}>
-                  {linkedin}
-                </Link>
+                <View style={s.contactItem}>
+                  <Text style={s.contactLabel}>LinkedIn: </Text>
+                  <Link src={linkedin} style={s.contactLink}>
+                    {linkedin.replace('https://www.', '').replace('https://', '')}
+                  </Link>
+                </View>
+              )}
+              {telegram && (
+                <View style={s.contactItem}>
+                  <Text style={s.contactLabel}>Telegram: </Text>
+                  <Link src={telegram} style={s.contactLink}>
+                    @{telegram.split('/').pop()}
+                  </Link>
+                </View>
               )}
               {github && (
-                <Link src={github} style={s.contactLink}>
-                  {github}
-                </Link>
+                <View style={s.contactItem}>
+                  <Text style={s.contactLabel}>GitHub: </Text>
+                  <Link src={github} style={s.contactLink}>
+                    {github.replace('https://', '')}
+                  </Link>
+                </View>
               )}
             </View>
             {availability && <Text style={s.availability}>{availability}</Text>}
@@ -198,10 +231,24 @@ export function CVDocument({ author }: { author: CVAuthor }) {
           </View>
         )}
 
+        {/* Skills */}
+        {skills?.length ? (
+          <View style={s.section}>
+            <SectionLabel>Technical Skills</SectionLabel>
+            <View style={s.skillsWrap}>
+              {skills.map((skill, i) => (
+                <View key={i} style={s.skillTag}>
+                  <Text>{skill}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        ) : null}
+
         {/* Experience */}
         {experience?.length ? (
           <View style={s.section}>
-            <SectionLabel>Experience</SectionLabel>
+            <SectionLabel>Professional Experience</SectionLabel>
             {experience.map((e, i) => (
               <View key={i} style={s.expEntry}>
                 <View style={s.expHeader}>
@@ -223,17 +270,25 @@ export function CVDocument({ author }: { author: CVAuthor }) {
           </View>
         ) : null}
 
-        {/* Skills */}
-        {skills?.length ? (
+        {/* Key Projects */}
+        {projects?.length ? (
           <View style={s.section}>
-            <SectionLabel>Technical Skills</SectionLabel>
-            <View style={s.skillsWrap}>
-              {skills.map((skill, i) => (
-                <View key={i} style={s.skillTag}>
-                  <Text>{skill}</Text>
-                </View>
-              ))}
-            </View>
+            <SectionLabel>Key Projects & Products</SectionLabel>
+            {projects.map((p, i) => (
+              <View key={i} style={s.projectEntry}>
+                {p.href ? (
+                  <Link src={p.href} style={{ textDecoration: 'none' }}>
+                    <Text style={s.projectTitle}>{p.title}</Text>
+                  </Link>
+                ) : (
+                  <Text style={s.projectTitle}>{p.title}</Text>
+                )}
+                <Text style={s.projectDesc}>{p.description}</Text>
+                {p.tech?.length && (
+                  <Text style={s.projectTech}>Technologies: {p.tech.join(' · ')}</Text>
+                )}
+              </View>
+            ))}
           </View>
         ) : null}
 

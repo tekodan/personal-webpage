@@ -35,6 +35,17 @@ function renderSkills(skills: string[], format: 'plain' | 'badges'): string {
   return skills.join(' · ')
 }
 
+function renderProjects(projects: Authors['projects'] | undefined): string {
+  if (!projects?.length) return ''
+  return projects
+    .map((p) => {
+      const header = p.href ? `### [${p.title}](${p.href})` : `### ${p.title}`
+      const tech = p.tech?.length ? `**Technologies:** ${p.tech.join(' · ')}` : ''
+      return `${header}\n${p.description}\n\n${tech}`
+    })
+    .join('\n\n')
+}
+
 function renderExperience(experience: Authors['experience'] | undefined): string {
   if (!experience?.length) return ''
   return experience
@@ -84,8 +95,10 @@ function buildCV(
     availability,
     email,
     linkedin,
+    telegram,
     introduction,
     skills,
+    projects,
     experience,
     education,
     awards,
@@ -101,6 +114,7 @@ function buildCV(
 Location: Granada, Spain · ${availability}
 Email: ${email}
 LinkedIn: ${linkedin}
+Telegram: @${telegram?.split('/').pop()}
 Website: ${siteUrl}
 
 ---
@@ -130,6 +144,12 @@ ${renderSkills(skills ?? [], skillsFormat)}
 ## Professional Experience
 
 ${renderExperience(experience)}
+
+---
+
+## Key Projects
+
+${renderProjects(projects)}
 
 ---
 

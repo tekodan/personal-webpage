@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, github, skills, email, linkedin } = content
+  const { name, avatar, occupation, company, github, skills, email, linkedin, telegram } = content
   const topSkills = skills?.slice(0, 12) || []
   const remainingSkills = skills?.slice(12) || []
 
@@ -44,6 +44,7 @@ export default function AuthorLayout({ children, content }: Props) {
                 <SocialIcon kind="mail" href={`mailto:${email}`} size={5} />
                 <SocialIcon kind="github" href={github} size={5} />
                 <SocialIcon kind="linkedin" href={linkedin} size={5} />
+                <SocialIcon kind="telegram" href={telegram} size={5} />
               </div>
 
               {skills && skills.length > 0 && (

@@ -9,8 +9,8 @@ const appConfig = {
     contact: true,
   },
   navigation: {
-    showProjectsInHeader: false,
-    showBlogInHeader: false,
+    showProjectsInHeader: true,
+    showBlogInHeader: true,
     showTagsInHeader: false,
   },
 } as const
