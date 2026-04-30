@@ -71,7 +71,7 @@ const projectsData: Project[] = [
   {
     title: 'Museo Virtual del Carnaval',
     description:
-      '3D immersive experience winner of the Ingenio 2018 Prize by Fedesoft in the Social Impact category. Uses photogrammetry to preserve regional cultural heritage. (Project currently non-operational).',
+      '3D immersive nominated Indigo 2018 Prize by Mintic in the Social Impact category. Uses photogrammetry to preserve regional cultural heritage. (Project currently non-operational).',
     href: 'https://narino.gov.co/museo-virtual-del-carnaval-de-negros-y-blancos-de-pasto-ganador-de-los-premios-ingenio-2018/',
     tech: ['Unity', 'Sketchfab', 'Photogrammetry', 'Java'],
   },
