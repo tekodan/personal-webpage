@@ -109,7 +109,14 @@ const s = StyleSheet.create({
   bulletText: { flex: 1, fontSize: 8.5, color: '#374151', lineHeight: 1.5 },
 
   // Skills
-  skillCategoryLabel: { fontSize: 7, fontFamily: 'Helvetica-Bold', color: MUTED, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 3 },
+  skillCategoryLabel: {
+    fontSize: 7,
+    fontFamily: 'Helvetica-Bold',
+    color: MUTED,
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+    marginBottom: 3,
+  },
   skillsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 4, marginBottom: 6 },
   skillTag: {
     backgroundColor: LIGHT,
