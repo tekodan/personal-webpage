@@ -9,8 +9,6 @@ interface Props {
 
 export default function AuthorLayout({ children, content }: Props) {
   const { name, avatar, occupation, company, github, skills, email, linkedin, telegram } = content
-  const topSkills = skills?.slice(0, 12) || []
-  const remainingSkills = skills?.slice(12) || []
 
   return (
     <div className="relative right-1/2 left-1/2 -mx-[50vw] w-screen bg-[#060A12] text-white">
@@ -50,23 +48,25 @@ export default function AuthorLayout({ children, content }: Props) {
               {skills && skills.length > 0 && (
                 <div className="mt-4 w-full max-w-xs">
                   <h3 className="text-xs tracking-[0.2em] text-white/50 uppercase">Skills</h3>
-                  <ul className="mt-4 grid grid-cols-1 gap-y-2 text-sm text-white/70">
-                    {topSkills.map((skill) => (
-                      <li key={skill}>{skill}</li>
+                  <div className="mt-4 space-y-4">
+                    {skills.map((cat) => (
+                      <div key={cat.category}>
+                        <p className="mb-1.5 text-[10px] tracking-[0.15em] uppercase text-[#9DFF00]/70">
+                          {cat.category}
+                        </p>
+                        <div className="flex flex-wrap gap-1">
+                          {cat.items.map((skill) => (
+                            <span
+                              key={skill}
+                              className="rounded bg-white/5 px-1.5 py-0.5 text-xs text-white/60"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     ))}
-                  </ul>
-                  {remainingSkills.length > 0 && (
-                    <details className="mt-4 text-sm text-white/70">
-                      <summary className="cursor-pointer text-[#9DFF00] transition hover:underline">
-                        Show more
-                      </summary>
-                      <ul className="mt-3 grid grid-cols-1 gap-y-2">
-                        {remainingSkills.map((skill) => (
-                          <li key={skill}>{skill}</li>
-                        ))}
-                      </ul>
-                    </details>
-                  )}
+                  </div>
                 </div>
               )}
             </aside>

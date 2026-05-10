@@ -30,9 +30,17 @@ function skillBadge(skill: string): string {
   return `![${skill}](https://img.shields.io/badge/${label}-${color}?style=flat-square&logoColor=white)`
 }
 
-function renderSkills(skills: string[], format: 'plain' | 'badges'): string {
-  if (format === 'badges') return skills.map(skillBadge).join(' ')
-  return skills.join(' · ')
+function renderSkills(
+  skills: { category: string; items: string[] }[],
+  format: 'plain' | 'badges'
+): string {
+  return skills
+    .map((cat) => {
+      const rendered =
+        format === 'badges' ? cat.items.map(skillBadge).join(' ') : cat.items.join(' · ')
+      return `**${cat.category}:** ${rendered}`
+    })
+    .join('\n\n')
 }
 
 function renderProjects(projects: Authors['projects'] | undefined): string {

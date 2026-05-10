@@ -81,6 +81,14 @@ const ProjectEntry = defineNestedType(() => ({
   },
 }))
 
+const SkillCategory = defineNestedType(() => ({
+  name: 'SkillCategory',
+  fields: {
+    category: { type: 'string', required: true },
+    items: { type: 'list', of: { type: 'string' }, required: true },
+  },
+}))
+
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -207,7 +215,7 @@ export const Authors = defineDocumentType(() => ({
     linkedin: { type: 'string' },
     telegram: { type: 'string' },
     github: { type: 'string' },
-    skills: { type: 'list', of: { type: 'string' } },
+    skills: { type: 'list', of: SkillCategory },
     projects: { type: 'list', of: ProjectEntry },
     experience: { type: 'list', of: ExperienceEntry },
     education: { type: 'list', of: EducationEntry },

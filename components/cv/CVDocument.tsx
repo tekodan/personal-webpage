@@ -12,7 +12,7 @@ export interface CVAuthor {
   telegram?: string
   github?: string
   introduction?: string
-  skills?: string[]
+  skills?: { category: string; items: string[] }[]
   projects?: {
     title: string
     description: string
@@ -109,7 +109,8 @@ const s = StyleSheet.create({
   bulletText: { flex: 1, fontSize: 8.5, color: '#374151', lineHeight: 1.5 },
 
   // Skills
-  skillsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 4 },
+  skillCategoryLabel: { fontSize: 7, fontFamily: 'Helvetica-Bold', color: MUTED, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 3 },
+  skillsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 4, marginBottom: 6 },
   skillTag: {
     backgroundColor: LIGHT,
     borderRadius: 3,
@@ -237,13 +238,18 @@ export function CVDocument({ author }: { author: CVAuthor }) {
         {skills?.length ? (
           <View style={s.section}>
             <SectionLabel>Technical Skills</SectionLabel>
-            <View style={s.skillsWrap}>
-              {skills.map((skill, i) => (
-                <View key={i} style={s.skillTag}>
-                  <Text>{skill}</Text>
+            {skills.map((cat, i) => (
+              <View key={i}>
+                <Text style={s.skillCategoryLabel}>{cat.category}</Text>
+                <View style={s.skillsWrap}>
+                  {cat.items.map((skill, j) => (
+                    <View key={j} style={s.skillTag}>
+                      <Text>{skill}</Text>
+                    </View>
+                  ))}
                 </View>
-              ))}
-            </View>
+              </View>
+            ))}
           </View>
         ) : null}
 
