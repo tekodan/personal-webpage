@@ -82,12 +82,6 @@ export default function AuthorLayout({ children, content }: Props) {
                 >
                   Download CV (PDF)
                 </a>
-                <a
-                  href="/api/cv"
-                  className="inline-flex items-center rounded-md border border-white/10 px-4 py-2 text-sm font-medium text-white/50 transition hover:text-white/80"
-                >
-                  Download CV (.md)
-                </a>
               </div>
             </section>
           </div>

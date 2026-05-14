@@ -1,7 +1,7 @@
 import appConfig from './appConfig'
 
 const headerNavLinks = [
-  { href: '/home', title: 'Home', enabled: appConfig.features.home },
+  { href: '/', title: 'Home', enabled: appConfig.features.home },
   { href: '/about', title: 'About', enabled: appConfig.features.about },
   {
     href: '/projects',

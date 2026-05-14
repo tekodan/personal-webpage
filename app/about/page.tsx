@@ -6,7 +6,11 @@ import { genPageMetadata } from 'app/seo'
 import appConfig from '@/data/appConfig'
 import { notFound } from 'next/navigation'
 
-export const metadata = genPageMetadata({ title: 'About' })
+export const metadata = genPageMetadata({
+  title: 'About',
+  description:
+    'Dani Alva — Senior Backend Engineer with 14+ years in scalable APIs, distributed microservices, and headless e-commerce. Independent contractor, remote-first.',
+})
 
 export default function Page() {
   if (!appConfig.features.about) {

@@ -4,7 +4,11 @@ import { genPageMetadata } from 'app/seo'
 import appConfig from '@/data/appConfig'
 import { notFound } from 'next/navigation'
 
-export const metadata = genPageMetadata({ title: 'Projects' })
+export const metadata = genPageMetadata({
+  title: 'Projects',
+  description:
+    'Selected projects and platforms built by Dani Alva across e-commerce, SaaS, and civic tech — Adobe Commerce, Laravel, NestJS, and more.',
+})
 
 export default function Projects() {
   if (!appConfig.features.projects) {

@@ -6,7 +6,11 @@ import { genPageMetadata } from 'app/seo'
 import appConfig from '@/data/appConfig'
 import { notFound } from 'next/navigation'
 
-export const metadata = genPageMetadata({ title: 'Tags', description: 'Things I blog about' })
+export const metadata = genPageMetadata({
+  title: 'Tags',
+  description:
+    'Browse articles by topic — deep work, productivity, backend engineering, AI, software architecture, and more.',
+})
 
 export default async function Page() {
   if (!appConfig.features.blog || !appConfig.features.tags) {

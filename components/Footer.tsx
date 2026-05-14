@@ -15,7 +15,9 @@ export default function Footer() {
           <SocialIcon kind="linkedin" href={linkedin} size={6} />
           <SocialIcon kind="telegram" href={telegram} size={6} />
         </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">next.js powered</div>
+        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+          © {new Date().getFullYear()} Dani Alva · All rights reserved
+        </div>
       </div>
     </footer>
   )
