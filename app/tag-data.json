@@ -1,7 +1,10 @@
 {
-  "productivity": 1,
+  "deep-work": 2,
+  "productivity": 2,
+  "focus": 1,
+  "cal-newport": 1,
+  "meditation": 1,
+  "software-engineering": 2,
   "debugging": 1,
-  "software-engineering": 1,
-  "tad-framework": 1,
-  "deep-work": 1
+  "tad-framework": 1
 }
