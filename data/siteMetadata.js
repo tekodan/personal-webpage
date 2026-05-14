@@ -18,7 +18,7 @@ const siteMetadata = {
   // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com/in/dani-alvarez230354126/',
+  linkedin: 'https://www.linkedin.com/in/dani-alva/',
   telegram: 'https://t.me/danialvadev',
   threads: 'https://www.threads.net',
   instagram: 'https://www.instagram.com',

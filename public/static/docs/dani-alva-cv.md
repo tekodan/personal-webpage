@@ -10,7 +10,7 @@
 
 Location: Granada, Spain · Available worldwide (UTC+1/+2)
 Email: [danialvadev@proton.me](mailto:danialvadev@proton.me)
-LinkedIn: [linkedin.com/in/dani-alvarez230354126/](https://www.linkedin.com/in/dani-alvarez230354126/)
+LinkedIn: [linkedin.com/in/dani-alva/](https://www.linkedin.com/in/dani-alva/)
 GitHub: [github.com/tekodan](https://github.com/tekodan)
 Website: [danialva.com](https://danialva.com)
 
