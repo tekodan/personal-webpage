@@ -33,6 +33,8 @@ export default function Projects() {
                 imgSrc={d.imgSrc}
                 href={d.href}
                 tech={d.tech}
+                company={d.company}
+                year={d.year}
               />
             ))}
           </div>

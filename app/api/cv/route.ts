@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { Authors, allAuthors } from 'contentlayer/generated'
 import { coreContent } from 'pliny/utils/contentlayer'
 import siteMetadata from '@/data/siteMetadata'
+import projectsData from '@/data/projectsData'
 
 // shields.io color overrides for well-known skills
 const BADGE_COLORS: Record<string, string> = {
@@ -43,13 +44,23 @@ function renderSkills(
     .join('\n\n')
 }
 
-function renderProjects(projects: Authors['projects'] | undefined): string {
+function renderProjects(
+  projects: {
+    title: string
+    description: string
+    href?: string
+    tech?: string[]
+    company?: string
+    year?: number
+  }[]
+): string {
   if (!projects?.length) return ''
   return projects
     .map((p) => {
       const header = p.href ? `### [${p.title}](${p.href})` : `### ${p.title}`
+      const meta = [p.company, p.year].filter(Boolean).join(' · ')
       const tech = p.tech?.length ? `**Technologies:** ${p.tech.join(' · ')}` : ''
-      return `${header}\n${p.description}\n\n${tech}`
+      return `${header}${meta ? `\n*${meta}*` : ''}\n\n${p.description}\n\n${tech}`
     })
     .join('\n\n')
 }
@@ -111,13 +122,13 @@ function buildCV(
     telegram,
     introduction,
     skills,
-    projects,
     experience,
     education,
     awards,
     certifications,
   } = author
   const siteUrl = siteMetadata.siteUrl
+  const keyProjects = projectsData.filter((p) => p.key_project).sort((a, b) => b.year - a.year)
 
   return `# ${name}
 <img src="${siteUrl}${avatar}" alt="${name}" width="110" style="border-radius: 12px;" />
@@ -162,7 +173,7 @@ ${renderExperience(experience)}
 
 ## Key Projects
 
-${renderProjects(projects)}
+${renderProjects(keyProjects)}
 
 ---
 

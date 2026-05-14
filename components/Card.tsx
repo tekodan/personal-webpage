@@ -1,7 +1,7 @@
 import Image from './Image'
 import Link from './Link'
 
-const Card = ({ title, description, imgSrc, href, tech }) => (
+const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
   <div className="md max-w-[544px] p-4 md:w-1/2">
     <div
       className={`${
@@ -29,7 +29,7 @@ const Card = ({ title, description, imgSrc, href, tech }) => (
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="mb-1 text-2xl leading-8 font-bold tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -38,6 +38,13 @@ const Card = ({ title, description, imgSrc, href, tech }) => (
             title
           )}
         </h2>
+        {(company || year) && (
+          <p className="mb-3 text-sm text-gray-400 dark:text-gray-500">
+            {company}
+            {company && year && ' · '}
+            {year}
+          </p>
+        )}
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
         <div className="mb-4 flex flex-wrap gap-2">
           {tech?.map((t) => (

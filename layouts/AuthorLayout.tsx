@@ -51,7 +51,7 @@ export default function AuthorLayout({ children, content }: Props) {
                   <div className="mt-4 space-y-4">
                     {skills.map((cat) => (
                       <div key={cat.category}>
-                        <p className="mb-1.5 text-[10px] tracking-[0.15em] uppercase text-[#9DFF00]/70">
+                        <p className="mb-1.5 text-[10px] tracking-[0.15em] text-[#9DFF00]/70 uppercase">
                           {cat.category}
                         </p>
                         <div className="flex flex-wrap gap-1">

@@ -18,6 +18,8 @@ export interface CVAuthor {
     description: string
     tech?: string[]
     href?: string
+    company?: string
+    year?: number
   }[]
   experience?: {
     title: string
@@ -297,6 +299,13 @@ export function CVDocument({ author }: { author: CVAuthor }) {
                   </Link>
                 ) : (
                   <Text style={s.projectTitle}>{p.title}</Text>
+                )}
+                {(p.company || p.year) && (
+                  <Text style={s.projectDesc}>
+                    {p.company}
+                    {p.company && p.year && ' · '}
+                    {p.year}
+                  </Text>
                 )}
                 <Text style={s.projectDesc}>{p.description}</Text>
                 {p.tech?.length && (
