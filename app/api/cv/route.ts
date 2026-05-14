@@ -135,7 +135,7 @@ function buildCV(
 
 ### ${occupation} | API Architecture | Headless E-Commerce | Independent Contractor
 
-Location: Granada, Spain · ${availability}
+Location: Remote · ${availability}
 Email: ${email}
 LinkedIn: ${linkedin}
 Telegram: @${telegram?.split('/').pop()}

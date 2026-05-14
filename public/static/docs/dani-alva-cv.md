@@ -8,7 +8,7 @@
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
 
-Location: Granada, Spain · Available worldwide (UTC+1/+2)
+Location: Remote · US Eastern Time (ET)
 Email: [danialvadev@proton.me](mailto:danialvadev@proton.me)
 LinkedIn: [linkedin.com/in/dani-alva/](https://www.linkedin.com/in/dani-alva/)
 GitHub: [github.com/tekodan](https://github.com/tekodan)
