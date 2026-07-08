@@ -79,6 +79,217 @@
   }
 }
 
+/* Supernova loading screen — runs once per session */
+.supernova-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+.supernova-loader[aria-hidden='true'] {
+  pointer-events: none;
+}
+.supernova-stage {
+  position: relative;
+  width: min(360px, 80vw);
+  height: min(360px, 80vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.supernova-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.supernova-core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9dff00;
+  box-shadow:
+    0 0 30px rgba(157, 255, 0, 0.9),
+    0 0 70px rgba(157, 255, 0, 0.4);
+  animation: supernova-pulse 1.6s ease-in-out infinite;
+  z-index: 2;
+}
+@keyframes supernova-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 30px rgba(157, 255, 0, 0.9),
+      0 0 60px rgba(157, 255, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.5);
+    box-shadow:
+      0 0 50px rgba(157, 255, 0, 1),
+      0 0 100px rgba(157, 255, 0, 0.6);
+  }
+}
+.supernova-ring {
+  fill: none;
+  stroke: #9dff00;
+  stroke-width: 1.5;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: supernova-ring 2.4s ease-out infinite;
+  opacity: 0;
+}
+.supernova-ring-1 {
+  animation-delay: 0s;
+}
+.supernova-ring-2 {
+  animation-delay: 0.8s;
+}
+.supernova-ring-3 {
+  animation-delay: 1.6s;
+}
+@keyframes supernova-ring {
+  0% {
+    r: 18;
+    opacity: 0.9;
+    stroke-width: 2;
+  }
+  100% {
+    r: 180;
+    opacity: 0;
+    stroke-width: 0.4;
+  }
+}
+.supernova-ray {
+  stroke: #9dff00;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-origin: 0 0;
+  animation: supernova-ray 1.8s ease-out infinite;
+}
+@keyframes supernova-ray {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    stroke-width: 0.5;
+  }
+  25% {
+    opacity: 1;
+    stroke-width: 2;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+    stroke-width: 0.4;
+  }
+}
+.supernova-particle {
+  fill: #9dff00;
+  opacity: 0;
+  animation: supernova-particle 2.2s ease-out infinite;
+}
+@keyframes supernova-particle {
+  0% {
+    opacity: 0;
+    r: 2;
+  }
+  15% {
+    opacity: 1;
+    r: 1.6;
+  }
+  100% {
+    opacity: 0;
+    r: 0.4;
+  }
+}
+.supernova-brand {
+  position: absolute;
+  bottom: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.6em;
+  color: #9dff00;
+  white-space: nowrap;
+  opacity: 0;
+  animation: supernova-brand 1.6s ease-out 0.5s forwards;
+}
+@keyframes supernova-brand {
+  0% {
+    opacity: 0;
+    letter-spacing: 1.4em;
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.6em;
+    filter: blur(0);
+  }
+}
+.supernova-status {
+  position: absolute;
+  bottom: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.supernova-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9dff00;
+  box-shadow: 0 0 10px rgba(157, 255, 0, 0.8);
+  animation: supernova-status-blink 1.1s ease-in-out infinite;
+}
+@keyframes supernova-status-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Konami easter egg: subtle ambient shifts while dev-unlocked class is on body */
+body.dev-unlocked {
+  caret-color: #9dff00;
+}
+body.dev-unlocked::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(157, 255, 0, 0.025) 0px,
+    rgba(157, 255, 0, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+  animation: dev-scan 6s linear infinite;
+}
+@keyframes dev-scan {
+  0% {
+    background-position-y: 0px;
+  }
+  100% {
+    background-position-y: 6px;
+  }
+}
+
 @layer utilities {
   .prose {
     & a {

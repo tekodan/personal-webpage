@@ -6,6 +6,7 @@ import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
+import LoadingScreen from '@/components/LoadingScreenMount'
 import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}
       <body className="bg-gray-950 pl-[calc(100vw-100%)] leading-relaxed text-white antialiased">
         <ThemeProviders>
+          <LoadingScreen />
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             {appConfig.features.search ? (
