@@ -23,6 +23,12 @@ const BADGE_COLORS: Record<string, string> = {
   PostgreSQL: '4169E1',
   MariaDB: '003545',
   Oracle: 'F80000',
+  LangChain: '3178C6',
+  RAG: '7C3AED',
+  'Gemma 4': '4285F4',
+  ChromaDB: '9CA3AF',
+  Cybersecurity: '6D28D9',
+  OWASP: '000000',
 }
 
 function skillBadge(skill: string): string {
@@ -133,7 +139,7 @@ function buildCV(
   return `# ${name}
 <img src="${siteUrl}${avatar}" alt="${name}" width="110" style="border-radius: 12px;" />
 
-### ${occupation} | API Architecture | Headless E-Commerce | Independent Contractor
+### ${occupation} | RAG & Agentic Systems | Full-Stack | Independent Contractor
 
 Location: Remote · ${availability}
 Email: ${email}
@@ -147,15 +153,10 @@ Website: ${siteUrl}
 
 ${introduction}
 
-Strong focus on clean architecture, long-term maintainability, and disciplined delivery.
-Hands-on experience with Adobe Commerce, Laravel, NestJS, GraphQL Federation, and
-production deployments on AWS EKS.
-
-Working knowledge of AI-assisted development workflows including Prompt Engineering,
-GitHub Copilot, and Claude Code.
-
-I work with spec-driven planning and a test-first quality mindset (unit, integration,
-and E2E) to deliver reliable, predictable releases.
+Strong focus on clean architecture, long-term maintainability, disciplined delivery,
+and AI security applied to every layer (OWASP, prompt injection defense). I work with
+spec-driven planning and a test-first quality mindset (unit, integration, and E2E) to
+deliver reliable, predictable releases.
 
 ---
 

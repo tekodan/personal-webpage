@@ -10,6 +10,18 @@ interface Project {
 }
 
 const projectsData: Project[] = [
+  // AI / Agentic (Active)
+  {
+    title: 'Enola — Investigadora Digital',
+    year: 2026,
+    key_project: true,
+    company: 'Ronin',
+    description:
+      'AI-powered digital investigation assistant built on a Python RAG pipeline grounded in Google Gemma 4. LangChain orchestration with ChromaDB vector storage; retrieves and synthesizes evidence with a conversational, streaming interface.',
+    href: 'https://enola.ronin.com.co',
+    tech: ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'AI Agents', 'Streaming'],
+  },
+
   // E-commerce / Retail (Active)
   {
     title: 'Todomoda',

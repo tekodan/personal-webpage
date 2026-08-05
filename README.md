@@ -1,6 +1,6 @@
 # danialva.com
 
-Personal website and blog of **Dani Alva** — Senior Backend Engineer with 14+ years building scalable APIs, distributed microservices, and headless e-commerce platforms.
+Personal website and blog of **Dani Alva** — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms.
 
 Built with **Next.js 15**, **Tailwind CSS 4**, and **Contentlayer** for MDX content.
 

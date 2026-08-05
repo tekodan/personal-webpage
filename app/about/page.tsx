@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 export const metadata = genPageMetadata({
   title: 'About',
   description:
-    'Dani Alva — Senior Backend Engineer with 14+ years in scalable APIs, distributed microservices, and headless e-commerce. Independent contractor, remote-first.',
+    'Dani Alva — AI Full-Stack Developer with 14+ years building AI-native products: RAG pipelines, agentic systems, and production-grade full-stack platforms. Independent contractor, remote-first.',
 })
 
 export default function Page() {

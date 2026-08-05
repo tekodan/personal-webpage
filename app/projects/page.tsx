@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 export const metadata = genPageMetadata({
   title: 'Projects',
   description:
-    'Selected projects and platforms built by Dani Alva across e-commerce, SaaS, and civic tech — Adobe Commerce, Laravel, NestJS, and more.',
+    'Selected projects and platforms built by Dani Alva across AI-native products, e-commerce, and SaaS — Python RAG, LangChain, Next.js, and more.',
 })
 
 export default function Projects() {
@@ -23,8 +23,8 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            A selection of products and platforms I've built or contributed to across e-commerce,
-            SaaS, and civic tech.
+            A selection of products and platforms I've built or contributed to across AI-native
+            development, e-commerce, SaaS, and civic tech.
           </p>
         </div>
         <div className="container py-12">

@@ -1,0 +1,111 @@
+---
+title: 'Building a RAG Pipeline in Python: From SQL to Semantic Search'
+summary: 'RAG is the new SQL. A practical walkthrough of building a production-grade retrieval pipeline with LangChain, ChromaDB, and a local Gemma 4 model — without the hype.'
+date: '2026-08-05'
+authors: ['default']
+tags: ['rag', 'langchain', 'python', 'vector-databases', 'ai-engineering']
+draft: false
+---
+
+A few years ago, "search" meant a SQL `LIKE` query or a keyword index. Today, if you're not using semantic retrieval, your product is already behind. Retrieval-Augmented Generation (RAG) has become as fundamental to the stack as the database itself.
+
+But building a RAG pipeline that actually works in production — not just a tutorial demo — takes more than calling an embeddings API. In this post, I'll walk through the architecture I use in real projects, including Enola, an AI investigation assistant I built on Python, LangChain, ChromaDB, and Google Gemma 4.
+
+## Why RAG Is the New SQL
+
+LLMs are frozen in time at their training cutoff. RAG fixes that by giving the model access to your data at query time: you retrieve the most relevant chunks, stuff them into the prompt, and let the model ground its answer in facts it can cite.
+
+The result is an application that:
+
+- Answers questions about _your_ documents, not generic knowledge.
+- Can update its knowledge by swapping the index, no fine-tuning needed.
+- Lets you trace every claim back to a source — essential for trust.
+
+## The Core Pieces of a RAG Pipeline
+
+### 1. Ingestion: Chunking and Embeddings
+
+Before retrieval, documents must be split into chunks and converted into vectors. Chunking strategy matters more than people think. I use a two-tier approach:
+
+- **Semantic-aware chunking**: split on paragraph and section boundaries instead of a fixed character count.
+- **Chunk overlap**: keep 10–20% overlap so context isn't cut mid-idea.
+
+Each chunk is embedded and stored in a vector database. For Enola, that database is **ChromaDB** — lightweight, local, and fast to iterate with.
+
+### 2. Retrieval: Vector Search + Keyword Hybrid
+
+Pure vector search misses exact terms (SKUs, names, IDs). Hybrid search combines vector similarity with keyword matching and merges results with a re-ranking step. This is where most naive RAG implementations fail — they rely on vector-only search and get mediocre precision.
+
+### 3. Generation: Grounded Answers with a Local Model
+
+For the generation step I use **Google Gemma 4** running locally through **Ollama**. Running the model locally gives three big advantages:
+
+- **Privacy**: sensitive documents never leave your infrastructure.
+- **Cost**: no per-token API bills at scale.
+- **Control**: deterministic behavior for evaluation.
+
+## A Minimal LangChain Pipeline in Python
+
+Here's the shape of the pipeline, without the boilerplate:
+
+```python
+from langchain_chroma import Chroma
+from langchain_community.embeddings import OllamaEmbeddings
+from langchain_ollama import ChatOllama
+
+embeddings = OllamaEmbeddings(model="gemma4")
+vectorstore = Chroma(
+    collection_name="documents",
+    embedding_function=embeddings,
+    persist_directory="./chroma_db",
+)
+
+retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4})
+
+llm = ChatOllama(model="gemma4", temperature=0.0)
+```
+
+Then a prompt that forces grounded answers:
+
+```python
+from langchain_core.prompts import ChatPromptTemplate
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "Answer using ONLY the retrieved context. "
+               "If the answer isn't in the context, say you don't know. "
+               "Cite the source of every claim."),
+    ("human", "Context:\n{context}\n\nQuestion: {question}"),
+])
+
+chain = prompt | llm
+```
+
+The magic is the constraint in the system prompt: the model _must_ ground every claim in the retrieved chunks. That's what turns an LLM from a text generator into a reasoning engine over your data.
+
+## Evaluation: The Step Everyone Skips
+
+You cannot improve what you cannot measure. Before shipping any RAG feature, build an evaluation set:
+
+- **Retrieval quality**: does the right chunk come back for a query?
+- **Answer accuracy**: is the grounded answer correct?
+- **Hallucination rate**: how often does the model invent facts outside the context?
+
+Run these as regression tests in CI. A prompt change that looks good in one demo often breaks retrieval in subtle ways.
+
+## From Prototype to Production
+
+The demo pipeline above is a starting point. Production RAG adds:
+
+- **Re-ranking** on top of initial retrieval.
+- **Guardrails** against prompt injection (a chunk can contain malicious instructions — see my post on AI security).
+- **Streaming** responses to the UI.
+- **Monitoring** of cost and quality per query.
+
+## Key Takeaways
+
+- RAG is now standard infrastructure — learn chunking, embeddings, and hybrid search as fluently as SQL.
+- Local models like Gemma 4 make RAG private, cheap, and controllable.
+- Evaluation is non-negotiable: measure retrieval and answer quality from day one.
+- The backend is becoming the reasoning engine, not just a CRUD gatekeeper.
+
+If you're building a knowledge assistant, documentation search, or any product where users ask questions over data, RAG isn't optional anymore. It's the new SQL.

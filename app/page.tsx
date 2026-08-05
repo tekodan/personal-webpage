@@ -12,9 +12,9 @@ import { Authors, allAuthors } from 'contentlayer/generated'
 import { coreContent } from 'pliny/utils/contentlayer'
 
 export const metadata = genPageMetadata({
-  title: 'Senior Backend Engineer · AI-Augmented',
+  title: 'AI Full-Stack Developer · RAG & Agentic Systems',
   description:
-    'Dani Alva — Senior Backend Engineer with 14+ years building scalable APIs, distributed microservices, and headless e-commerce platforms. Available for remote freelance work.',
+    'Dani Alva — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms. Available for remote freelance work.',
 })
 
 export default function HomeLandingPage() {
@@ -134,15 +134,17 @@ export default function HomeLandingPage() {
                 <ul className="mt-6 space-y-3 text-sm leading-relaxed text-white/70">
                   <li className="flex items-start gap-3">
                     <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
-                    <span>Scalable backend services</span>
+                    <span>AI-Native Product Development — RAG, agents, generative UI</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
-                    <span>High-performance APIs & microservices</span>
+                    <span>
+                      Production-Grade Full-Stack — APIs, microservices, headless e-commerce
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
-                    <span>Architecture + product mindset</span>
+                    <span>AI Workflow Automation — LangChain, n8n, local models via Ollama</span>
                   </li>
                 </ul>
                 {appConfig.features.about && (
@@ -155,6 +157,51 @@ export default function HomeLandingPage() {
                 )}
               </div>
             </div>
+          </section>
+
+          <hr className="border-0 border-t border-white/10" />
+
+          <section className="py-16 md:py-20">
+            <h2 className="text-center text-xs font-medium tracking-[0.3em] text-white/50 uppercase md:text-sm">
+              AI Stack
+            </h2>
+            <p className="mx-auto mt-4 max-w-[65ch] text-center text-base leading-relaxed text-white/70">
+              The tools I use to ship AI-native products end to end — from retrieval pipelines to
+              agentic orchestration and local inference.
+            </p>
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+              {[
+                'RAG',
+                'LangChain',
+                'Gemma 4',
+                'ChromaDB',
+                'Ollama',
+                'AI Agents',
+                'Function Calling',
+                'Vector DBs',
+                'Prompt Engineering',
+                'n8n',
+                'Model Routing',
+                'AI Security',
+              ].map((tech) => (
+                <div
+                  key={tech}
+                  className="flex items-center justify-center rounded border border-white/10 bg-white/5 px-3 py-3 text-center text-xs font-medium text-white/70"
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
+            {appConfig.features.projects && (
+              <div className="mt-10 text-center">
+                <Link
+                  href="/projects"
+                  className="inline-flex text-sm font-medium text-[#9DFF00] underline-offset-4 transition duration-200 ease-out hover:underline"
+                >
+                  See AI work in production
+                </Link>
+              </div>
+            )}
           </section>
 
           <hr className="border-0 border-t border-white/10" />

@@ -47,5 +47,8 @@ yarn-error.log*
 # Contentlayer
 .contentlayer
 
+# Build artifacts
+*.tsbuildinfo
+
 AGENTS.md
 CLAUDE.md

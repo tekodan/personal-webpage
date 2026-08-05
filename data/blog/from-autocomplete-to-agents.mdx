@@ -1,0 +1,86 @@
+---
+title: 'From Autocomplete to Agents: Building Agentic Workflows That Ship'
+summary: 'AI coding assistants were fancy autocomplete. Agents are the real shift — systems that plan, use tools, and act across your stack. Here is how to design agentic workflows that actually reach production.'
+date: '2026-08-05'
+authors: ['default']
+tags: ['ai-agents', 'agentic-ai', 'langchain', 'function-calling', 'ai-engineering']
+draft: false
+---
+
+For the last few years we got comfortable with AI assistants acting as fancy autocomplete. They predicted the next few lines of code, saved us from looking up Regex documentation, and occasionally wrote a unit test.
+
+That era is over. In 2026, the real shift is from **assistants** to **agents**: systems that reason about a task, plan a sequence of steps, call tools, and act on real systems. The engineering skill is no longer writing syntax — it's orchestrating intelligence.
+
+## What Makes Something an Agent?
+
+A simple LLM call answers a question. An agent has three extra ingredients:
+
+1. **Tools** — functions it can call (search a database, read a file, send an email).
+2. **Planning** — deciding _which_ tools to use and in what order.
+3. **Loop** — observing tool results and deciding the next action, until the task is done.
+
+The difference is subtle but critical. A chatbot returns text. An agent returns _outcomes_.
+
+## Tool Use and Function Calling
+
+Function calling is the foundation of agentic systems. You define the tool's schema, and the model decides when to invoke it:
+
+```python
+tools = [
+    {
+        "name": "search_documents",
+        "description": "Semantic search over the document corpus",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "Natural language query"}
+            },
+            "required": ["query"],
+        },
+    }
+]
+```
+
+Designing tool schemas is where the craft lives. A good schema gives the model enough context to choose correctly, without leaking implementation details. Vague descriptions cause the model to call the wrong tool; overly verbose ones waste tokens and degrade decision quality.
+
+## Single-Agent vs Multi-Agent Architectures
+
+There are two patterns:
+
+- **Single agent, many tools**: one agent with a broad toolset. Simpler to build, easier to debug, but the tool list grows unwieldy.
+- **Multi-agent orchestration**: specialized agents (a researcher, a writer, a reviewer) coordinated by a supervisor. More powerful for complex workflows, but harder to control and much more expensive.
+
+My rule of thumb: **start single-agent**. Add agents only when one agent's context window becomes the bottleneck. A multi-agent system is a maintenance cost, not a feature.
+
+## Human-in-the-Loop: The Design Pattern People Forget
+
+Agents can be autonomous, but for real products, most decisions that carry risk need a human checkpoint. The pattern:
+
+1. Agent does the _work_ — retrieves, drafts, computes.
+2. Human _approves_ the critical actions before they execute.
+3. Agent completes the flow.
+
+This is especially important when an agent takes irreversible actions — sending messages, deploying, or spending money. Guardrails and approval gates are what make agentic systems trustworthy enough to ship.
+
+## Practical Lessons From Enola
+
+I build agentic workflows in production, including Enola, an AI investigation assistant. A few hard-won lessons:
+
+- **Constrain the loop**: unbounded agent loops burn tokens and produce chaos. Always cap the number of iterations.
+- **Validate tool output**: never trust tool results blindly — check types, ranges, and existence before feeding them back to the model.
+- **Stream to the user**: a user will wait for a 30-second agent run if they see it thinking. Streaming turns latency into transparency.
+- **Test the tools, not just the prompts**: an agent is only as reliable as its tools. Unit-test each tool in isolation.
+
+## Where the Value Shifts
+
+The most valuable skill in 2026 is not writing the most code — it's **auditing and orchestrating** AI systems. Understanding model limitations, managing context, and ensuring deterministic outcomes from non-deterministic systems is the new senior engineering.
+
+## Key Takeaways
+
+- Agents = tools + planning + a loop. Anything less is a chatbot.
+- Start single-agent; escalate to multi-agent only when necessary.
+- Put a human in the loop for irreversible or high-risk actions.
+- Cap loops, validate tool output, stream progress, and test tools in isolation.
+- Your value is in architecture and orchestration, not syntax.
+
+The junior developer you hire increasingly runs locally. The engineer's job is to direct that intelligence safely and predictably.

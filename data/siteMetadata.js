@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Dani Alva',
   headerTitle: 'Dani Alva',
   description:
-    'Senior Backend Engineer with 14+ years building scalable APIs and distributed systems.',
+    'AI Full-Stack Developer with 14+ years building AI-native products end to end — RAG pipelines, agentic systems, and production-grade full-stack platforms.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://danialva.com',
