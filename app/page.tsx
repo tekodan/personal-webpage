@@ -64,29 +64,29 @@ export default function HomeLandingPage() {
                 </h1>
                 <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-white/70 md:text-lg">
                   RAG, agents and full-stack products, backed by 14+ years shipping production
-                  software.
+                  software across retail, SaaS, and civic tech.
                 </p>
                 <p className="mt-6 inline-flex items-center gap-2 text-sm text-white/60">
                   <span className="bg-accent h-2 w-2 rounded-full" aria-hidden="true" />
                   <span role="status">Available for remote projects</span>
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <a
-                    href="https://enola.ronin.com.co"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-accent-dim text-on-accent focus-visible:outline-accent w-full px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110 sm:w-auto"
-                  >
-                    See Enola in action
-                  </a>
                   {appConfig.features.projects && (
                     <Link
                       href="/projects"
-                      className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                      className="bg-accent-dim text-on-accent focus-visible:outline-accent w-full px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110 sm:w-auto"
                     >
                       View selected work
                     </Link>
                   )}
+                  <a
+                    href="https://enola.ronin.com.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                  >
+                    See Enola in action
+                  </a>
                 </div>
               </div>
 
@@ -126,68 +126,104 @@ export default function HomeLandingPage() {
 
           <hr className="border-0 border-t border-white/10" />
 
-          <section className="py-16 md:py-20">
-            <div className="grid items-start gap-10 md:grid-cols-2 md:gap-12">
-              <div>
-                <p className="text-accent text-[11px] font-medium tracking-[0.3em] uppercase">
-                  Featured Work
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                  Enola — an AI investigation assistant that actually reads
-                </h2>
-                <p className="mt-4 max-w-[55ch] text-base leading-relaxed text-white/70">
-                  A RAG system that detects digital gender-based violence in Facebook conversations,
-                  backed by a canonical taxonomy of 6 categories and 19 subdimensions — with human
-                  validation in the loop to keep answers accurate and ethical.
-                </p>
-                <ul className="mt-6 space-y-3 text-sm leading-relaxed text-white/70">
-                  <li className="flex items-start gap-3">
-                    <span className="bg-accent mt-[0.6rem] h-px w-3" />
-                    <span>
-                      Built the retrieval pipeline and question-answering: Python RAG grounded in a
-                      local model via Ollama, orchestrated with LangChain, stored in ChromaDB.
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="bg-accent mt-[0.6rem] h-px w-3" />
-                    <span>
-                      69 cases analyzed, streaming chat interface, and a confidence-focused
-                      evaluation layer to defend against hallucination.
-                    </span>
-                  </li>
-                </ul>
-              </div>
+          <section className="py-6 md:py-8">
+            <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
+              {[
+                'Fashion & Retail',
+                'E-commerce',
+                'Government & Civic Tech',
+                'Healthcare SaaS',
+                'Enterprise ERP',
+              ].map((industry) => (
+                <span
+                  key={industry}
+                  className="text-sm font-medium tracking-[0.2em] text-white/50 uppercase"
+                >
+                  {industry}
+                </span>
+              ))}
+            </div>
+          </section>
 
-              <div
-                className="flex flex-wrap gap-2 md:justify-center"
-                style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}
-              >
-                {[
-                  ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Ollama'],
-                  ['Vector DBs', 'Function Calling', 'AI Agents', 'Streaming', 'Evals'],
-                ].map((group) => (
-                  <div key={group.join()} className="flex flex-wrap gap-2">
-                    {group.map((tech) => (
+          <hr className="border-0 border-t border-white/10" />
+
+          <section className="py-16 md:py-20">
+            <p className="text-accent text-center text-[11px] font-medium tracking-[0.3em] uppercase">
+              Selected Work
+            </p>
+            <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              14+ years of production software — from AI to enterprise and civic tech
+            </h2>
+            <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
+              A cross-section of products across industries: AI, fashion retail at scale, and
+              award-winning civic tech.
+            </p>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  eyebrow: 'AI / Agentic',
+                  title: 'Enola — Investigadora Digital',
+                  tag: '2026',
+                  href: 'https://enola.ronin.com.co',
+                  body: 'AI investigation assistant on a Python RAG pipeline — LangChain orchestration with ChromaDB and a conversational, streaming interface.',
+                  tech: ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Streaming'],
+                },
+                {
+                  eyebrow: 'E-commerce / Retail',
+                  title: 'RadioShack (Unicomer)',
+                  tag: '2024',
+                  href: 'https://www.radioshackla.com',
+                  body: 'Total redesign of the e-commerce platform for Central and South America — unified multi-country backend and marketplace integrations.',
+                  tech: ['Adobe Commerce', 'PHP', 'Elasticsearch'],
+                },
+                {
+                  eyebrow: 'Civic Tech',
+                  title: 'GanaPAE',
+                  tag: '2017 · INDIGO Prize',
+                  href: '/projects',
+                  body: 'Open-government transparency platform awarded the national INDIGO 2017 and Ingenio 2018 prizes for social innovation.',
+                  tech: ['PHP', 'Open Data', 'Java', 'Android'],
+                },
+              ].map((p) => (
+                <div
+                  key={p.title}
+                  className="flex flex-col rounded-xl border border-white/10 bg-white/5 p-5"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-accent text-[11px] font-medium tracking-[0.25em] uppercase">
+                      {p.eyebrow}
+                    </p>
+                    <span className="shrink-0 text-xs text-white/50">{p.tag}</span>
+                  </div>
+                  <h3 className="mt-3 text-lg font-semibold tracking-tight text-white">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-white/70">{p.body}</p>
+                  <div
+                    className="mt-4 flex flex-wrap gap-2"
+                    style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}
+                  >
+                    {p.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-white/70"
+                        className="rounded border border-white/10 px-2 py-1 text-[11px] font-medium text-white/60"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                ))}
-              </div>
+                  <a
+                    href={p.href}
+                    target={p.href.startsWith('http') ? '_blank' : undefined}
+                    rel={p.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="text-accent mt-5 inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
+                  >
+                    View case &rarr;
+                  </a>
+                </div>
+              ))}
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://enola.ronin.com.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent-dim text-on-accent px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110"
-              >
-                See Enola in action
-              </a>
+            <div className="mt-10 text-center">
               <Link
                 href="/projects"
                 className="border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40"
