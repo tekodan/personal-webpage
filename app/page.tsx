@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import Image from '@/components/Image'
 import KonamiEasterEgg from '@/components/KonamiEasterEgg'
+import FeaturedSlider from '@/components/FeaturedSlider'
 import Stats from '@/components/Stats'
 import appConfig from '@/data/appConfig'
 import siteMetadata from '@/data/siteMetadata'
@@ -149,79 +150,60 @@ export default function HomeLandingPage() {
 
           <section className="py-16 md:py-20">
             <p className="text-accent text-center text-[11px] font-medium tracking-[0.3em] uppercase">
-              Selected Work
+              Highlights
             </p>
             <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              14+ years of production software — from AI to enterprise and civic tech
+              Profile & selected work
             </h2>
             <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
-              A cross-section of products across industries: AI, fashion retail at scale, and
-              award-winning civic tech.
+              A rotating look at who I am and the products I've built — across AI, enterprise, and
+              civic tech.
             </p>
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  eyebrow: 'AI / Agentic',
-                  title: 'Enola — Investigadora Digital',
-                  tag: '2026',
-                  href: 'https://enola.ronin.com.co',
-                  body: 'AI investigation assistant on a Python RAG pipeline — LangChain orchestration with ChromaDB and a conversational, streaming interface.',
-                  tech: ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Streaming'],
-                },
-                {
-                  eyebrow: 'E-commerce / Retail',
-                  title: 'RadioShack (Unicomer)',
-                  tag: '2024',
-                  href: 'https://www.radioshackla.com',
-                  body: 'Total redesign of the e-commerce platform for Central and South America — unified multi-country backend and marketplace integrations.',
-                  tech: ['Adobe Commerce', 'PHP', 'Elasticsearch'],
-                },
-                {
-                  eyebrow: 'Civic Tech',
-                  title: 'GanaPAE',
-                  tag: '2017 · INDIGO Prize',
-                  href: '/projects',
-                  body: 'Open-government transparency platform awarded the national INDIGO 2017 and Ingenio 2018 prizes for social innovation.',
-                  tech: ['PHP', 'Open Data', 'Java', 'Android'],
-                },
-              ].map((p) => (
-                <div
-                  key={p.title}
-                  className="flex flex-col rounded-xl border border-white/10 bg-white/5 p-5"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <p className="text-accent text-[11px] font-medium tracking-[0.25em] uppercase">
-                      {p.eyebrow}
-                    </p>
-                    <span className="shrink-0 text-xs text-white/50">{p.tag}</span>
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold tracking-tight text-white">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-white/70">{p.body}</p>
-                  <div
-                    className="mt-4 flex flex-wrap gap-2"
-                    style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}
-                  >
-                    {p.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded border border-white/10 px-2 py-1 text-[11px] font-medium text-white/60"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={p.href}
-                    target={p.href.startsWith('http') ? '_blank' : undefined}
-                    rel={p.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-accent mt-5 inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
-                  >
-                    View case &rarr;
-                  </a>
-                </div>
-              ))}
+            <div className="mx-auto mt-10 max-w-3xl">
+              <FeaturedSlider
+                slides={[
+                  {
+                    kind: 'profile',
+                    name,
+                    avatar,
+                    occupation,
+                    aboutSummary,
+                    socials: [
+                      { href: email ? `mailto:${email}` : undefined, label: 'Email' },
+                      { href: github, label: 'GitHub' },
+                      { href: linkedin, label: 'LinkedIn' },
+                      { href: telegram, label: 'Telegram' },
+                    ],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'AI / Agentic',
+                    title: 'Enola — Investigadora Digital',
+                    tag: '2026',
+                    href: 'https://enola.ronin.com.co',
+                    body: 'AI investigation assistant on a Python RAG pipeline — LangChain orchestration with ChromaDB and a conversational, streaming interface.',
+                    tech: ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Streaming'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'E-commerce / Retail',
+                    title: 'RadioShack (Unicomer)',
+                    tag: '2024',
+                    href: 'https://www.radioshackla.com',
+                    body: 'Total redesign of the e-commerce platform for Central and South America — unified multi-country backend and marketplace integrations.',
+                    tech: ['Adobe Commerce', 'PHP', 'Elasticsearch'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'Civic Tech',
+                    title: 'GanaPAE',
+                    tag: '2017 · INDIGO Prize',
+                    href: '/projects',
+                    body: 'Open-government transparency platform awarded the national INDIGO 2017 and Ingenio 2018 prizes for social innovation.',
+                    tech: ['PHP', 'Open Data', 'Java', 'Android'],
+                  },
+                ]}
+              />
             </div>
             <div className="mt-10 text-center">
               <Link
