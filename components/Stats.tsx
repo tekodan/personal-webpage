@@ -13,11 +13,19 @@ interface StatsProps {
 }
 
 function useCountUp(target: number, duration = 1400, start = false) {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(target)
   const rafRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (!start) return
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      setValue(target)
+      return
+    }
+    setValue(0)
     const begin = performance.now()
     const tick = (now: number) => {
       const elapsed = now - begin
@@ -76,7 +84,7 @@ export default function Stats({ items }: StatsProps) {
         <div ref={ref} className="mt-10 grid grid-cols-2 gap-6 md:mt-12 md:grid-cols-4 md:gap-10">
           {items.map((item) => (
             <div key={item.label} className="flex flex-col items-center text-center">
-              <div className="text-4xl font-light tracking-tight text-[#9DFF00] md:text-5xl">
+              <div className="text-accent text-4xl font-light tracking-tight md:text-5xl">
                 <StatNumber value={item.value} suffix={item.suffix} start={visible} />
               </div>
               <p className="mt-2 text-[10px] tracking-[0.25em] text-white/55 uppercase md:text-xs">

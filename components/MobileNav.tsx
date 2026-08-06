@@ -29,7 +29,13 @@ const MobileNav = () => {
 
   return (
     <>
-      <button aria-label="Toggle Menu" onClick={onToggleNav} className="sm:hidden">
+      <button
+        aria-label={navShow ? 'Close menu' : 'Open menu'}
+        aria-expanded={navShow}
+        aria-controls="mobile-nav-panel"
+        onClick={onToggleNav}
+        className="flex h-11 min-h-11 w-11 min-w-11 items-center justify-center sm:hidden"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -69,7 +75,10 @@ const MobileNav = () => {
               leaveTo="translate-x-full opacity-0"
               unmount={false}
             >
-              <DialogPanel className="fixed top-0 left-0 z-70 h-full w-full bg-white/95 duration-300 dark:bg-gray-950/98">
+              <DialogPanel
+                id="mobile-nav-panel"
+                className="fixed top-0 left-0 z-70 h-full w-full bg-white/95 duration-300 dark:bg-gray-950/98"
+              >
                 <nav
                   ref={navRef}
                   className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
@@ -87,8 +96,8 @@ const MobileNav = () => {
                 </nav>
 
                 <button
-                  className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-7 right-4 z-80 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
-                  aria-label="Toggle Menu"
+                  className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-4 right-4 z-80 flex h-11 w-11 items-center justify-center p-2 text-gray-900 dark:text-gray-100"
+                  aria-label="Close menu"
                   onClick={onToggleNav}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

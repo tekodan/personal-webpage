@@ -6,7 +6,6 @@ import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
-import LoadingScreen from '@/components/LoadingScreenMount'
 import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
@@ -89,19 +88,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       )}
       <body className="bg-gray-950 pl-[calc(100vw-100%)] leading-relaxed text-white antialiased">
+        <a
+          href="#main-content"
+          className="sr-only z-[200] focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:rounded focus:bg-[#9dff00] focus:px-4 focus:py-2 focus:text-black"
+        >
+          Skip to main content
+        </a>
         <ThemeProviders>
-          <LoadingScreen />
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             {appConfig.features.search ? (
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                 <Header />
-                <main className="mb-auto">{children}</main>
+                <main id="main-content" className="mb-auto">
+                  {children}
+                </main>
               </SearchProvider>
             ) : (
               <>
                 <Header />
-                <main className="mb-auto">{children}</main>
+                <main id="main-content" className="mb-auto">
+                  {children}
+                </main>
               </>
             )}
             <Footer />

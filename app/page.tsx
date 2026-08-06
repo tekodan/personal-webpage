@@ -1,7 +1,5 @@
 import Link from '@/components/Link'
 import Image from '@/components/Image'
-import SocialIcon from '@/components/social-icons'
-import HeroMediaSlider from '@/components/HeroMediaSlider'
 import KonamiEasterEgg from '@/components/KonamiEasterEgg'
 import Stats from '@/components/Stats'
 import appConfig from '@/data/appConfig'
@@ -28,8 +26,6 @@ export default function HomeLandingPage() {
     github,
     linkedin,
     telegram,
-    heroTitlePrefix,
-    heroSubtitle,
     aboutTitle,
     aboutSummary,
     contactTitle,
@@ -56,35 +52,63 @@ export default function HomeLandingPage() {
       <div className="relative right-1/2 left-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#070B12] text-white">
         <div className="absolute top-0 left-1/2 h-[26rem] w-[30rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(157,255,0,0.09)_0%,_rgba(157,255,0,0)_72%)] blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-6 sm:px-8 xl:px-10">
-          <section className="relative isolate overflow-hidden py-24 md:py-28">
-            <HeroMediaSlider
-              slides={[
-                { kind: 'image', src: '/static/images/back5.jpg' },
-                { kind: 'video', src: '/static/videos/data-rivers.mp4' },
-              ]}
-            />
-            <div className="relative z-10 mx-auto max-w-4xl text-center">
-              <h1 className="text-4xl leading-[1.04] font-semibold tracking-[-0.025em] text-white md:text-7xl">
-                {heroTitlePrefix} {name}
-              </h1>
-              <p className="mx-auto mt-6 max-w-[65ch] text-base leading-relaxed text-white/70 md:text-lg">
-                {heroSubtitle}
-              </p>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
-                {appConfig.features.projects && (
-                  <Link
-                    href="/projects"
-                    className="w-full bg-[#8fdc10] px-5 py-3 text-sm font-medium text-[#081106] transition duration-200 ease-out hover:brightness-110 focus-visible:outline-[#9DFF00] sm:w-auto"
+          <section className="relative isolate overflow-hidden py-20 md:py-24">
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_500px_at_50%_-10%,_rgba(157,255,0,0.10),_transparent)]" />
+            <div className="relative z-10 grid items-center gap-12 md:grid-cols-2 md:gap-10">
+              <div>
+                <p className="text-accent text-[11px] font-medium tracking-[0.3em] uppercase">
+                  {name} · AI Full-Stack Developer
+                </p>
+                <h1 className="mt-4 text-4xl leading-[1.05] font-semibold tracking-[-0.025em] text-white md:text-5xl xl:text-6xl">
+                  I build production AI systems — not just demos.
+                </h1>
+                <p className="mt-6 max-w-[50ch] text-base leading-relaxed text-white/70 md:text-lg">
+                  RAG, agents and full-stack products, backed by 14+ years shipping production
+                  software.
+                </p>
+                <p className="mt-6 inline-flex items-center gap-2 text-sm text-white/60">
+                  <span className="bg-accent h-2 w-2 rounded-full" aria-hidden="true" />
+                  <span role="status">Available for remote projects</span>
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a
+                    href="https://enola.ronin.com.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-accent-dim text-on-accent focus-visible:outline-accent w-full px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110 sm:w-auto"
                   >
-                    Explore work
-                  </Link>
-                )}
-                <Link
-                  href="/about"
-                  className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
-                >
-                  About me
-                </Link>
+                    See Enola in action
+                  </a>
+                  {appConfig.features.projects && (
+                    <Link
+                      href="/projects"
+                      className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                    >
+                      View selected work
+                    </Link>
+                  )}
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -inset-6 -z-10 rounded-3xl bg-[radial-gradient(circle,_rgba(157,255,0,0.12)_0%,_rgba(157,255,0,0)_70%)] blur-2xl" />
+                <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl">
+                  <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                    <span className="ml-3 truncate text-xs text-white/50">enola.ronin.com.co</span>
+                  </div>
+                  <Image
+                    src="/static/images/enola-dashboard.webp"
+                    alt="Screenshot of Enola, an AI digital investigation assistant built on a Python RAG pipeline"
+                    width={1240}
+                    height={800}
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -103,92 +127,162 @@ export default function HomeLandingPage() {
           <hr className="border-0 border-t border-white/10" />
 
           <section className="py-16 md:py-20">
-            <div className="grid gap-10 md:grid-cols-3 md:gap-12">
-              <div className="flex flex-col items-center justify-center space-y-5 text-center md:col-span-1">
-                {avatar && (
-                  <Image
-                    src={avatar}
-                    alt={`${name} profile photo`}
-                    width={220}
-                    height={220}
-                    className="h-30 w-30 rounded-full border border-white/15 object-cover md:h-34 md:w-34"
-                  />
-                )}
-                <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-white">{name}</h2>
-                  <p className="mt-1 text-sm leading-relaxed font-semibold text-white/80">
-                    {occupation}
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-white/65">{company}</p>
-                </div>
-                <div className="flex items-center gap-3 opacity-85">
-                  <SocialIcon kind="mail" href={`mailto:${email}`} size={5} />
-                  <SocialIcon kind="github" href={github} size={5} />
-                  <SocialIcon kind="linkedin" href={linkedin} size={5} />
-                  <SocialIcon kind="telegram" href={telegram} size={5} />
-                </div>
-              </div>
-              <div className="max-w-[65ch] md:col-span-2 md:border-l md:border-white/10 md:pl-12">
-                <h2 className="text-3xl font-semibold tracking-tight text-white">{aboutTitle}</h2>
-                <p className="mt-4 text-base leading-relaxed text-white/70">{aboutSummary}</p>
+            <div className="grid items-start gap-10 md:grid-cols-2 md:gap-12">
+              <div>
+                <p className="text-accent text-[11px] font-medium tracking-[0.3em] uppercase">
+                  Featured Work
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                  Enola — an AI investigation assistant that actually reads
+                </h2>
+                <p className="mt-4 max-w-[55ch] text-base leading-relaxed text-white/70">
+                  A RAG system that detects digital gender-based violence in Facebook conversations,
+                  backed by a canonical taxonomy of 6 categories and 19 subdimensions — with human
+                  validation in the loop to keep answers accurate and ethical.
+                </p>
                 <ul className="mt-6 space-y-3 text-sm leading-relaxed text-white/70">
                   <li className="flex items-start gap-3">
-                    <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
-                    <span>AI-Native Product Development — RAG, agents, generative UI</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
+                    <span className="bg-accent mt-[0.6rem] h-px w-3" />
                     <span>
-                      Production-Grade Full-Stack — APIs, microservices, headless e-commerce
+                      Built the retrieval pipeline and question-answering: Python RAG grounded in a
+                      local model via Ollama, orchestrated with LangChain, stored in ChromaDB.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-[0.6rem] h-px w-3 bg-white/35" />
-                    <span>AI Workflow Automation — LangChain, n8n, local models via Ollama</span>
+                    <span className="bg-accent mt-[0.6rem] h-px w-3" />
+                    <span>
+                      69 cases analyzed, streaming chat interface, and a confidence-focused
+                      evaluation layer to defend against hallucination.
+                    </span>
                   </li>
                 </ul>
-                {appConfig.features.about && (
-                  <Link
-                    href="/about"
-                    className="mt-8 inline-flex text-sm font-medium text-[#9DFF00] underline-offset-4 transition duration-200 ease-out hover:underline"
-                  >
-                    Read full About page
-                  </Link>
-                )}
               </div>
+
+              <div
+                className="flex flex-wrap gap-2 md:justify-center"
+                style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}
+              >
+                {[
+                  ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Ollama'],
+                  ['Vector DBs', 'Function Calling', 'AI Agents', 'Streaming', 'Evals'],
+                ].map((group) => (
+                  <div key={group.join()} className="flex flex-wrap gap-2">
+                    {group.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-white/70"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://enola.ronin.com.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent-dim text-on-accent px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110"
+              >
+                See Enola in action
+              </a>
+              <Link
+                href="/projects"
+                className="border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40"
+              >
+                View all projects
+              </Link>
             </div>
           </section>
 
           <hr className="border-0 border-t border-white/10" />
 
           <section className="py-16 md:py-20">
-            <h2 className="text-center text-xs font-medium tracking-[0.3em] text-white/50 uppercase md:text-sm">
-              AI Stack
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                {aboutTitle}
+              </h2>
+              <p className="mx-auto mt-4 max-w-[60ch] text-base leading-relaxed text-white/70">
+                {aboutSummary}
+              </p>
+              <div className="mx-auto mt-8 grid max-w-xl gap-3 text-left sm:grid-cols-3">
+                {[
+                  ['AI-Native Development', 'RAG, agents, generative UI'],
+                  ['Production-Grade Full-Stack', 'APIs, microservices, headless'],
+                  ['AI Workflow Automation', 'LangChain, n8n, local models via Ollama'],
+                ].map(([title, body]) => (
+                  <div key={title} className="rounded-lg border border-white/10 bg-white/5 p-4">
+                    <h3 className="flex items-start gap-2 text-sm leading-relaxed font-semibold text-white">
+                      <span className="bg-accent mt-[0.55rem] h-px w-3 shrink-0" />
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/70">{body}</p>
+                  </div>
+                ))}
+              </div>
+              {appConfig.features.about && (
+                <div className="mt-8">
+                  <Link
+                    href="/about"
+                    className="text-accent inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
+                  >
+                    Read full About page
+                  </Link>
+                </div>
+              )}
+            </div>
+          </section>
+
+          <hr className="border-0 border-t border-white/10" />
+
+          <section className="py-16 md:py-20">
+            <h2 className="text-accent text-center text-xs font-medium tracking-[0.3em] uppercase md:text-sm">
+              Full-Stack + AI
             </h2>
-            <p className="mx-auto mt-4 max-w-[65ch] text-center text-base leading-relaxed text-white/70">
-              The tools I use to ship AI-native products end to end — from retrieval pipelines to
-              agentic orchestration and local inference.
+            <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
+              A complete stack — from agentic AI to production interfaces — so intelligence ships
+              end to end.
             </p>
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+            <div className="mx-auto mt-10 grid max-w-4xl gap-3 md:grid-cols-3">
               {[
-                'RAG',
-                'LangChain',
-                'Gemma 4',
-                'ChromaDB',
-                'Ollama',
-                'AI Agents',
-                'Function Calling',
-                'Vector DBs',
-                'Prompt Engineering',
-                'n8n',
-                'Model Routing',
-                'AI Security',
-              ].map((tech) => (
-                <div
-                  key={tech}
-                  className="flex items-center justify-center rounded border border-white/10 bg-white/5 px-3 py-3 text-center text-xs font-medium text-white/70"
-                >
-                  {tech}
+                {
+                  layer: 'Agentic AI',
+                  items: ['RAG', 'LangChain', 'AI Agents', 'Function Calling', 'Gemma 4', 'Ollama'],
+                },
+                {
+                  layer: 'Data & Retrieval',
+                  items: ['ChromaDB', 'Vector DBs', 'Prompt Engineering', 'Model Routing', 'Evals'],
+                },
+                {
+                  layer: 'Delivery & Full-Stack',
+                  items: [
+                    'Python',
+                    'Next.js',
+                    'TypeScript',
+                    'React',
+                    'Node.js',
+                    'n8n',
+                    'AI Security (OWASP)',
+                  ],
+                },
+              ].map((group) => (
+                <div key={group.layer} className="rounded-xl border border-white/10 bg-white/5 p-5">
+                  <h3 className="text-accent text-[11px] font-medium tracking-[0.25em] uppercase">
+                    {group.layer}
+                  </h3>
+                  <ul className="mt-4 space-y-2">
+                    {group.items.map((tech) => (
+                      <li
+                        key={tech}
+                        className="flex items-start gap-2 text-sm leading-relaxed text-white/75"
+                      >
+                        <span className="mt-[0.55rem] h-px w-3 shrink-0 bg-white/30" />
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
@@ -196,7 +290,7 @@ export default function HomeLandingPage() {
               <div className="mt-10 text-center">
                 <Link
                   href="/projects"
-                  className="inline-flex text-sm font-medium text-[#9DFF00] underline-offset-4 transition duration-200 ease-out hover:underline"
+                  className="text-accent inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
                 >
                   See AI work in production
                 </Link>
@@ -217,7 +311,7 @@ export default function HomeLandingPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                 <Link
                   href={`mailto:${email}`}
-                  className="w-full bg-[#8fdc10] px-5 py-3 text-sm font-medium text-[#081106] transition duration-200 ease-out hover:brightness-110 focus-visible:outline-[#9DFF00] sm:w-auto"
+                  className="bg-accent-dim text-on-accent focus-visible:outline-accent w-full px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110 sm:w-auto"
                 >
                   Contact by email
                 </Link>
