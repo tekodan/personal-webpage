@@ -21,6 +21,7 @@ interface ProjectSlide {
   href: string
   body: string
   tech: string[]
+  image?: string
 }
 
 type Slide = ProfileSlide | ProjectSlide
@@ -73,6 +74,17 @@ function SlideContent({ slide }: { slide: Slide }) {
 
   return (
     <div>
+      {slide.image && (
+        <div className="mb-5 overflow-hidden rounded-lg border border-white/10">
+          <Image
+            src={slide.image}
+            alt={`${slide.title} preview`}
+            width={640}
+            height={300}
+            className="h-auto w-full object-cover"
+          />
+        </div>
+      )}
       <div className="flex items-center justify-between gap-2">
         <p className="text-accent text-[11px] font-medium tracking-[0.25em] uppercase">
           {slide.eyebrow}
@@ -135,6 +147,8 @@ export default function FeaturedSlider({ slides, intervalMs = AUTOPLAY_MS }: Fea
     return () => window.clearInterval(id)
   }, [paused, intervalMs, slides.length, index])
 
+  if (slides.length === 0) return null
+
   return (
     <div
       role="region"
@@ -148,6 +162,8 @@ export default function FeaturedSlider({ slides, intervalMs = AUTOPLAY_MS }: Fea
           key={index}
           className="transition-opacity duration-300 ease-out"
           aria-roledescription="slide"
+          aria-live="polite"
+          aria-atomic="true"
           aria-label={`${index + 1} of ${slides.length}`}
         >
           <SlideContent slide={slides[index]} />
@@ -155,53 +171,61 @@ export default function FeaturedSlider({ slides, intervalMs = AUTOPLAY_MS }: Fea
       </div>
 
       <div className="mt-5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
               aria-current={i === index}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === index ? 'bg-accent w-6' : 'w-2 bg-white/25 hover:bg-white/40'
+              className={`focus-visible:outline-accent flex h-6 min-h-6 w-6 min-w-6 items-center justify-center rounded-full ${
+                i === index ? 'text-accent' : 'text-white/25 hover:text-white/40'
               }`}
-            />
+            >
+              <span
+                className={`block h-2 rounded-full transition-all duration-300 ${
+                  i === index ? 'bg-accent w-6' : 'w-2'
+                }`}
+              />
+            </button>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={prev}
-            aria-label="Previous slide"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-white/40"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+        {slides.length > 1 && (
+          <div className="flex items-center gap-2">
+            <button
+              onClick={prev}
+              aria-label="Previous slide"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-white/40"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={next}
-            aria-label="Next slide"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-white/40"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={next}
+              aria-label="Next slide"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-white/40"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

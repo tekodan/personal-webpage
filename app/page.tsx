@@ -128,7 +128,7 @@ export default function HomeLandingPage() {
           <hr className="border-0 border-t border-white/10" />
 
           <section className="py-6 md:py-8">
-            <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
+            <ul className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center">
               {[
                 'Fashion & Retail',
                 'E-commerce',
@@ -136,14 +136,14 @@ export default function HomeLandingPage() {
                 'Healthcare SaaS',
                 'Enterprise ERP',
               ].map((industry) => (
-                <span
+                <li
                   key={industry}
                   className="text-sm font-medium tracking-[0.2em] text-white/50 uppercase"
                 >
                   {industry}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
 
           <hr className="border-0 border-t border-white/10" />
@@ -156,8 +156,8 @@ export default function HomeLandingPage() {
               Profile & selected work
             </h2>
             <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
-              A rotating look at who I am and the products I've built — across AI, enterprise, and
-              civic tech.
+              A rotating look at who I am and the products I've built across AI, e-commerce, SaaS,
+              and civic tech.
             </p>
             <div className="mx-auto mt-10 max-w-3xl">
               <FeaturedSlider
@@ -181,6 +181,7 @@ export default function HomeLandingPage() {
                     title: 'Enola — Investigadora Digital',
                     tag: '2026',
                     href: 'https://enola.ronin.com.co',
+                    image: '/static/images/enola-dashboard.webp',
                     body: 'AI investigation assistant on a Python RAG pipeline — LangChain orchestration with ChromaDB and a conversational, streaming interface.',
                     tech: ['Python', 'RAG', 'Gemma 4', 'LangChain', 'ChromaDB', 'Streaming'],
                   },
@@ -190,8 +191,69 @@ export default function HomeLandingPage() {
                     title: 'RadioShack (Unicomer)',
                     tag: '2024',
                     href: 'https://www.radioshackla.com',
+                    image: '/static/images/proj-radioshack.webp',
                     body: 'Total redesign of the e-commerce platform for Central and South America — unified multi-country backend and marketplace integrations.',
                     tech: ['Adobe Commerce', 'PHP', 'Elasticsearch'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'E-commerce / Retail',
+                    title: 'Todomoda (Blue Star Group)',
+                    tag: '2021',
+                    href: 'https://todomoda.com',
+                    image: '/static/images/proj-todomoda.webp',
+                    body: 'Phygital e-commerce for the leading accessory brand in LATAM — integrating 800+ physical stores with the digital channel.',
+                    tech: ['Adobe Commerce', 'Magento', 'PHP', 'Redis'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'E-commerce / Retail',
+                    title: 'Isadora (Blue Star Group)',
+                    tag: '2021',
+                    href: 'https://www.shopisadora.com',
+                    image: '/static/images/proj-isadora.webp',
+                    body: 'Personalized online stores with real-time inventory sync across 11 countries on a scalable Adobe Commerce architecture.',
+                    tech: ['Adobe Commerce', 'Magento', 'PHP', 'Varnish'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'E-commerce / Retail',
+                    title: 'Sole (Infracommerce)',
+                    tag: '2022',
+                    href: 'https://www.sole.com.pe',
+                    image: '/static/images/proj-sole.webp',
+                    body: 'Conversion-oriented platform for household appliances — installation scheduling from checkout and local payment gateways.',
+                    tech: ['Magento', 'PHP', 'MySQL', 'ERP'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'E-commerce / Retail',
+                    title: 'FYA Ferretería (Infracommerce)',
+                    tag: '2021',
+                    href: 'https://www.fya.pe',
+                    image: '/static/images/proj-fya.webp',
+                    body: 'Hybrid B2B/B2C e-commerce for construction materials with advanced faceted search and custom pricing rules.',
+                    tech: ['Magento 2', 'PHP', 'MySQL', 'Elasticsearch'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'Healthcare SaaS',
+                    title: 'ClinicalApp',
+                    tag: '2020',
+                    href: 'https://clinicalapp.com.co',
+                    image: '/static/images/proj-clinicalapp.webp',
+                    body: 'SaaS digitizing medical and dental processes — electronic records, odontograms, and administration for clinics.',
+                    tech: ['PHP', 'Laravel', 'SQL Server'],
+                  },
+                  {
+                    kind: 'project',
+                    eyebrow: 'Enterprise ERP',
+                    title: 'Compuconta',
+                    tag: '2012',
+                    href: 'https://www.compuconta.com',
+                    image: '/static/images/proj-compuconta.webp',
+                    body: 'Modernization of a leading ERP in Colombia — electronic payroll, invoicing, and accounting modules.',
+                    tech: ['PHP', 'Laravel', 'Symfony', 'React', 'PostgreSQL'],
                   },
                   {
                     kind: 'project',
