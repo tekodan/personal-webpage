@@ -130,8 +130,8 @@ const projectsData: Project[] = [
     year: 2018,
     company: 'Narino Government',
     description:
-      'Pioneering animal welfare platform for adoption and monitoring of stray animals in Nariño. Recognized as a world best practice by UNDP. (Project currently non-operational).',
-    href: 'https://pagina10.com/web/con-exito-se-cumplio-la-jornada-dale-la-pata-en-pasto/',
+      'Pioneering animal welfare platform for the centralization and traceability of the adoption process, managing information for animal-welfare foundations across Nariño. Uses social storytelling to boost adoption and dog/cat neutering campaigns. Recognized as a world best practice by UNDP. (Project currently non-operational).',
+    href: 'https://dalelapata.narino.gov.co',
     tech: ['Python', 'Django', 'MySQL', 'Social Innovation'],
   },
 ]

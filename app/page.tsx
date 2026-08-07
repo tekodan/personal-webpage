@@ -265,6 +265,16 @@ export default function HomeLandingPage() {
                     body: 'Open-government transparency platform awarded the national INDIGO 2017 and Ingenio 2018 prizes for social innovation.',
                     tech: ['PHP', 'Open Data', 'Java', 'Android'],
                   },
+                  {
+                    kind: 'project',
+                    eyebrow: 'Civic Tech / Animal Welfare',
+                    title: 'Dale la Pata',
+                    tag: '2018 · UNDP Best Practice',
+                    href: 'https://dalelapata.narino.gov.co',
+                    image: '/static/images/proj-dalelapata.webp',
+                    body: 'Pioneering animal welfare platform for the traceability of the adoption process and management of animal-welfare foundations — recognized as a world best practice by UNDP.',
+                    tech: ['Python', 'Django', 'MySQL', 'Social Innovation'],
+                  },
                 ]}
               />
             </div>
