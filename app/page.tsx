@@ -27,7 +27,6 @@ export default function HomeLandingPage() {
     github,
     linkedin,
     telegram,
-    aboutTitle,
     aboutSummary,
     contactTitle,
     contactSummary,
@@ -153,7 +152,7 @@ export default function HomeLandingPage() {
               Highlights
             </p>
             <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              Profile & selected work
+              Selected work
             </h2>
             <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
               A rotating look at who I am and the products I've built across AI, e-commerce, SaaS,
@@ -162,19 +161,6 @@ export default function HomeLandingPage() {
             <div className="mx-auto mt-10 max-w-3xl">
               <FeaturedSlider
                 slides={[
-                  {
-                    kind: 'profile',
-                    name,
-                    avatar,
-                    occupation,
-                    aboutSummary,
-                    socials: [
-                      { href: email ? `mailto:${email}` : undefined, label: 'Email' },
-                      { href: github, label: 'GitHub' },
-                      { href: linkedin, label: 'LinkedIn' },
-                      { href: telegram, label: 'Telegram' },
-                    ],
-                  },
                   {
                     kind: 'project',
                     eyebrow: 'AI / Agentic',
@@ -292,8 +278,17 @@ export default function HomeLandingPage() {
 
           <section className="py-16 md:py-20">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                {aboutTitle}
+              {avatar && (
+                <Image
+                  src={avatar}
+                  alt={`${name} profile photo`}
+                  width={144}
+                  height={144}
+                  className="mx-auto h-36 w-36 rounded-full border border-white/15 object-cover"
+                />
+              )}
+              <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                {name} — {occupation}
               </h2>
               <p className="mx-auto mt-4 max-w-[60ch] text-base leading-relaxed text-white/70">
                 {aboutSummary}

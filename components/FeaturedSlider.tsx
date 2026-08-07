@@ -75,13 +75,13 @@ function SlideContent({ slide }: { slide: Slide }) {
   return (
     <div>
       {slide.image && (
-        <div className="mb-5 overflow-hidden rounded-lg border border-white/10">
+        <div className="mb-5 h-44 w-full overflow-hidden rounded-lg border border-white/10 sm:h-52">
           <Image
             src={slide.image}
             alt={`${slide.title} preview`}
             width={640}
             height={300}
-            className="h-auto w-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
       )}
