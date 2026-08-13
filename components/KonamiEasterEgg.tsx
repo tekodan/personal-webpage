@@ -56,8 +56,8 @@ export default function KonamiEasterEgg() {
         active ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'
       }`}
     >
-      <div className="flex items-center gap-2 rounded-sm border border-[#9DFF00]/40 bg-black/80 px-3 py-2 font-mono text-xs text-[#9DFF00] shadow-[0_0_24px_rgba(157,255,0,0.18)] backdrop-blur-sm">
-        <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-[#9DFF00]" />
+      <div className="border-accent/40 text-accent flex items-center gap-2 rounded-sm border bg-black/80 px-3 py-2 font-mono text-xs shadow-[0_0_24px_rgba(212,165,116,0.25)] backdrop-blur-sm">
+        <span className="bg-accent inline-block h-2 w-2 animate-pulse rounded-full" />
         <span className="tracking-[0.2em] uppercase">dev_mode unlocked</span>
         <span className="text-white/40">·</span>
         <span className="text-white/60">built by dani</span>

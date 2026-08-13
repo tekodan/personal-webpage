@@ -33,14 +33,18 @@ const MobileNav = () => {
         aria-label={navShow ? 'Close menu' : 'Open menu'}
         aria-expanded={navShow}
         aria-controls="mobile-nav-panel"
+        aria-hidden={navShow}
+        tabIndex={navShow ? -1 : 0}
         onClick={onToggleNav}
-        className="brand-copper-bar fixed top-3 right-3 z-50 flex h-10 w-10 items-center justify-center rounded-sm border border-[#5a3920]/70 shadow-lg sm:hidden"
+        className={`brand-copper-bar fixed top-3 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3] shadow-lg sm:hidden ${
+          navShow ? 'pointer-events-none invisible' : ''
+        }`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="h-6 w-6 text-[#f5e6d3]"
+          className="h-6 w-6"
         >
           <path
             fillRule="evenodd"
@@ -96,7 +100,7 @@ const MobileNav = () => {
                 </nav>
 
                 <button
-                  className="brand-copper-bar fixed top-3 right-3 z-80 flex h-10 w-10 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3]"
+                  className="brand-copper-bar focus:outline-accent fixed top-3 right-3 z-80 flex h-11 w-11 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3]"
                   aria-label="Close menu"
                   onClick={onToggleNav}
                 >

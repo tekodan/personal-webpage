@@ -11,7 +11,7 @@ export default function AuthorLayout({ children, content }: Props) {
   const { name, avatar, occupation, company, github, skills, email, linkedin, telegram } = content
 
   return (
-    <div className="relative right-1/2 left-1/2 -mx-[50vw] w-screen bg-[#060A12] text-white">
+    <div className="brand-section-bg relative right-1/2 left-1/2 -mx-[50vw] w-screen text-white">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 xl:px-10">
         <header className="py-10">
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">About</h1>
@@ -51,7 +51,7 @@ export default function AuthorLayout({ children, content }: Props) {
                   <div className="mt-4 space-y-4">
                     {skills.map((cat) => (
                       <div key={cat.category}>
-                        <p className="mb-1.5 text-[10px] tracking-[0.15em] text-[#9DFF00]/70 uppercase">
+                        <p className="text-brand-gold-400/70 mb-1.5 text-[10px] tracking-[0.15em] uppercase">
                           {cat.category}
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -78,7 +78,7 @@ export default function AuthorLayout({ children, content }: Props) {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="/api/cv/pdf"
-                  className="inline-flex items-center rounded-md border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-[#9DFF00] hover:text-[#9DFF00]"
+                  className="hover:border-accent hover:text-accent inline-flex items-center rounded-md border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition"
                 >
                   Download CV (PDF)
                 </a>

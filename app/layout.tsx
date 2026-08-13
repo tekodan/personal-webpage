@@ -75,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang={siteMetadata.language}
       className={`${space_grotesk.variable} ${pinyon.variable} dark scroll-smooth`}
+      style={{ scrollbarGutter: 'stable' }}
       suppressHydrationWarning
     >
       <link
@@ -89,38 +90,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         href={`${basePath}/static/favicons/safari-pinned-tab.svg`}
         color="#5bbad5"
       />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" content="#000" />
+      <meta name="msapplication-TileColor" content="#163030" />
+      <meta name="theme-color" content="#163030" />
       {appConfig.features.blog && (
         <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       )}
-      <body className="bg-gray-950 pl-[calc(100vw-100%)] leading-relaxed text-white antialiased">
+      <body className="bg-brand-deep text-brand-cream-100 leading-relaxed antialiased">
         <a
           href="#main-content"
-          className="sr-only z-[200] focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:rounded focus:bg-[#9dff00] focus:px-4 focus:py-2 focus:text-black"
+          className="focus:bg-accent focus:text-on-accent sr-only z-[200] focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:rounded focus:px-4 focus:py-2"
         >
           Skip to main content
         </a>
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          {appConfig.features.search ? (
+            <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+              <Header />
+            </SearchProvider>
+          ) : (
+            <Header />
+          )}
           <SectionContainer>
-            {appConfig.features.search ? (
-              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-                <Header />
-                <main id="main-content" className="mb-auto">
-                  {children}
-                </main>
-              </SearchProvider>
-            ) : (
-              <>
-                <Header />
-                <main id="main-content" className="mb-auto">
-                  {children}
-                </main>
-              </>
-            )}
-            <Footer />
+            <main id="main-content" className="mb-auto">
+              {children}
+            </main>
           </SectionContainer>
+          <Footer />
         </ThemeProviders>
       </body>
     </html>

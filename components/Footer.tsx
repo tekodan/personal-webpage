@@ -7,7 +7,14 @@ export default function Footer() {
   const { email, github, linkedin, telegram } = coreContent(author)
 
   return (
-    <footer className="brand-mosaic-footer relative mt-20 w-full overflow-hidden">
+    <footer
+      className="relative mt-20 w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: 'url(/static/images/footer-background.png)' }}
+    >
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-10 text-[#f5e6d3]">
         <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
           <SocialIcon kind="mail" href={email ? `mailto:${email}` : undefined} size={6} />

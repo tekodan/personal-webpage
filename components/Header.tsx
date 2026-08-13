@@ -6,7 +6,14 @@ import MobileNav from './MobileNav'
 
 const Header = () => {
   return (
-    <header className="brand-header-bg relative w-full overflow-hidden text-white">
+    <header
+      className="relative w-full overflow-hidden border-b border-[#5a3920]/60 bg-cover bg-center bg-no-repeat text-white"
+      style={{ backgroundImage: 'url(/static/images/menu-background.png)' }}
+    >
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/45"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-4 pt-6 pb-3 sm:px-6 sm:pt-8 sm:pb-4">
         <Link
           href="/"
@@ -16,9 +23,9 @@ const Header = () => {
           <Image
             src={siteMetadata.siteLogo}
             alt={`${siteMetadata.headerTitle} logo`}
-            width={520}
-            height={224}
-            className="h-auto w-72 sm:w-96 md:w-[420px]"
+            width={760}
+            height={320}
+            className="h-auto w-72 sm:w-96 md:w-[460px]"
             priority
           />
         </Link>

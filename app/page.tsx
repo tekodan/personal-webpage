@@ -169,11 +169,11 @@ export default function HomeLandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <div className="relative right-1/2 left-1/2 -mx-[50vw] w-screen overflow-hidden bg-[#070B12] text-white">
-        <div className="absolute top-0 left-1/2 h-[26rem] w-[30rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(157,255,0,0.09)_0%,_rgba(157,255,0,0)_72%)] blur-3xl" />
+      <div className="brand-section-bg text-brand-cream-100 relative right-1/2 left-1/2 -mx-[50vw] w-screen overflow-hidden">
+        <div className="absolute top-0 left-1/2 h-[26rem] w-[30rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(212,165,116,0.10)_0%,_rgba(212,165,116,0)_72%)] blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-6 sm:px-8 xl:px-10">
           <section className="relative isolate overflow-hidden py-16 md:py-20">
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_500px_at_50%_-10%,_rgba(157,255,0,0.10),_transparent)]" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_500px_at_50%_-10%,_rgba(212,165,116,0.10),_transparent)]" />
             <p className="text-accent text-center text-[11px] font-medium tracking-[0.3em] uppercase">
               {name} · AI Full-Stack Developer
             </p>

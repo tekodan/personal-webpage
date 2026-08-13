@@ -1,0 +1,185 @@
+- generic [active] [ref=f4e1]:
+  - link "Skip to main content" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "Dani Alva" [ref=f4e6] [cursor=pointer]:
+        - /url: /
+        - img "Dani Alva logo" [ref=f4e7]
+      - navigation "Primary" [ref=f4e9]:
+        - list [ref=f4e10]:
+          - listitem [ref=f4e11]:
+            - link "Home" [ref=f4e12] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f4e13]: "|"
+          - listitem [ref=f4e14]:
+            - link "About" [ref=f4e15] [cursor=pointer]:
+              - /url: /about/
+            - generic [ref=f4e16]: "|"
+          - listitem [ref=f4e17]:
+            - link "Projects" [ref=f4e18] [cursor=pointer]:
+              - /url: /projects/
+            - generic [ref=f4e19]: "|"
+          - listitem [ref=f4e20]:
+            - link "Blog" [ref=f4e21] [cursor=pointer]:
+              - /url: /blog/
+    - main [ref=f4e22]:
+      - generic [ref=f4e24]:
+        - heading "About" [level=1] [ref=f4e26]
+        - separator [ref=f4e27]
+        - main [ref=f4e28]:
+          - generic [ref=f4e29]:
+            - complementary [ref=f4e30]:
+              - img "Dani Alva profile photo" [ref=f4e31]
+              - generic [ref=f4e32]:
+                - heading "Dani Alva" [level=2] [ref=f4e33]
+                - paragraph [ref=f4e34]: AI Full-Stack Developer · RAG & Agentic Systems
+                - paragraph [ref=f4e35]: Python · Next.js · TypeScript · LangChain · RAG
+              - generic [ref=f4e36]:
+                - link "mail Mail" [ref=f4e37] [cursor=pointer]:
+                  - /url: mailto:danialvadev@proton.me
+                  - generic [ref=f4e38]: mail
+                  - img "Mail" [ref=f4e39]
+                - link "github GitHub" [ref=f4e42] [cursor=pointer]:
+                  - /url: https://github.com/tekodan
+                  - generic [ref=f4e43]: github
+                  - img "GitHub" [ref=f4e44]
+                - link "linkedin Linkedin" [ref=f4e46] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/dani-alva/
+                  - generic [ref=f4e47]: linkedin
+                  - img "Linkedin" [ref=f4e48]
+                - link "telegram Telegram" [ref=f4e50] [cursor=pointer]:
+                  - /url: https://t.me/danialvadev
+                  - generic [ref=f4e51]: telegram
+                  - img "Telegram" [ref=f4e52]
+              - generic [ref=f4e54]:
+                - heading "Skills" [level=3] [ref=f4e55]
+                - generic [ref=f4e56]:
+                  - generic [ref=f4e57]:
+                    - paragraph [ref=f4e58]: AI & Agentic
+                    - generic [ref=f4e59]:
+                      - generic [ref=f4e60]: RAG
+                      - generic [ref=f4e61]: LangChain
+                      - generic [ref=f4e62]: Gemma 4
+                      - generic [ref=f4e63]: ChromaDB
+                      - generic [ref=f4e64]: Vector DBs
+                      - generic [ref=f4e65]: Prompt Engineering
+                      - generic [ref=f4e66]: AI Agents
+                      - generic [ref=f4e67]: Function Calling
+                      - generic [ref=f4e68]: Ollama
+                      - generic [ref=f4e69]: n8n
+                      - generic [ref=f4e70]: Model Routing
+                      - generic [ref=f4e71]: Claude Code
+                      - generic [ref=f4e72]: GitHub Copilot
+                      - generic [ref=f4e73]: Aider
+                      - generic [ref=f4e74]: Codex
+                      - generic [ref=f4e75]: DeepSeek
+                      - generic [ref=f4e76]: Llama
+                  - generic [ref=f4e77]:
+                    - paragraph [ref=f4e78]: Cybersecurity & AI Safety
+                    - generic [ref=f4e79]:
+                      - generic [ref=f4e80]: Cybersecurity
+                      - generic [ref=f4e81]: OWASP
+                      - generic [ref=f4e82]: AI Security
+                      - generic [ref=f4e83]: Prompt Injection Defense
+                  - generic [ref=f4e84]:
+                    - paragraph [ref=f4e85]: Backend
+                    - generic [ref=f4e86]:
+                      - generic [ref=f4e87]: PHP
+                      - generic [ref=f4e88]: Adobe Commerce
+                      - generic [ref=f4e89]: Laravel
+                      - generic [ref=f4e90]: Python
+                      - generic [ref=f4e91]: FastAPI
+                      - generic [ref=f4e92]: Django
+                      - generic [ref=f4e93]: Node.js
+                      - generic [ref=f4e94]: NestJS
+                  - generic [ref=f4e95]:
+                    - paragraph [ref=f4e96]: Frontend
+                    - generic [ref=f4e97]:
+                      - generic [ref=f4e98]: Next.js
+                      - generic [ref=f4e99]: React
+                      - generic [ref=f4e100]: TypeScript
+                      - generic [ref=f4e101]: Tailwind CSS
+                      - generic [ref=f4e102]: Less
+                      - generic [ref=f4e103]: Astro
+                      - generic [ref=f4e104]: Angular
+                  - generic [ref=f4e105]:
+                    - paragraph [ref=f4e106]: APIs & Architecture
+                    - generic [ref=f4e107]:
+                      - generic [ref=f4e108]: REST APIs
+                      - generic [ref=f4e109]: GraphQL
+                      - generic [ref=f4e110]: API Design & Architecture
+                      - generic [ref=f4e111]: Distributed Systems
+                  - generic [ref=f4e112]:
+                    - paragraph [ref=f4e113]: Cloud & DevOps
+                    - generic [ref=f4e114]:
+                      - generic [ref=f4e115]: AWS
+                      - generic [ref=f4e116]: DigitalOcean
+                      - generic [ref=f4e117]: Vercel
+                      - generic [ref=f4e118]: Docker
+                      - generic [ref=f4e119]: Kubernetes
+                      - generic [ref=f4e120]: CI/CD
+                      - generic [ref=f4e121]: DevOps
+                      - generic [ref=f4e122]: GitHub
+                      - generic [ref=f4e123]: GitLab
+                      - generic [ref=f4e124]: Bitbucket
+                  - generic [ref=f4e125]:
+                    - paragraph [ref=f4e126]: Databases
+                    - generic [ref=f4e127]:
+                      - generic [ref=f4e128]: PostgreSQL
+                      - generic [ref=f4e129]: Supabase
+                      - generic [ref=f4e130]: MariaDB
+                      - generic [ref=f4e131]: Oracle
+                      - generic [ref=f4e132]: Meilisearch
+                  - generic [ref=f4e133]:
+                    - paragraph [ref=f4e134]: Engineering Practices
+                    - generic [ref=f4e135]:
+                      - generic [ref=f4e136]: Backend Engineering
+                      - generic [ref=f4e137]: SOLID Principles
+                      - generic [ref=f4e138]: Clean Code
+                      - generic [ref=f4e139]: Test-First Mindset
+                      - generic [ref=f4e140]: Unit, Integration, and E2E Testing
+                      - generic [ref=f4e141]: Spec-Driven Development
+                  - generic [ref=f4e142]:
+                    - paragraph [ref=f4e143]: Leadership
+                    - generic [ref=f4e144]:
+                      - generic [ref=f4e145]: Scrum Master
+                      - generic [ref=f4e146]: Agile Coach
+            - generic [ref=f4e147]:
+              - generic [ref=f4e148]:
+                - heading "What I do" [level=2] [ref=f4e149]:
+                  - generic [ref=f4e150] [cursor=pointer]
+                  - text: What I do
+                - paragraph [ref=f4e154]: I'm an AI Full-Stack Developer with 14+ years of experience building production software. I design and ship AI-native products end to end — RAG pipelines, agentic workflows, and the full-stack applications that bring them to life.
+                - paragraph [ref=f4e155]: "My AI work centers on Python, LangChain, ChromaDB, and local models via Ollama. My foundation is deep backend engineering: PHP (Laravel, Adobe Commerce), NestJS, and GraphQL Federation, with production experience on AWS EKS and event-driven architectures. That combination means my AI features are production-grade, not just demos."
+                - heading "How I work" [level=2] [ref=f4e156]:
+                  - generic [ref=f4e157] [cursor=pointer]
+                  - text: How I work
+                - paragraph [ref=f4e161]: I work as an independent contractor — which means I own the outcome, not just the task. I bring spec-driven planning, a test-first mindset, and clear communication to every engagement. Remote-first, async-friendly, Available to work US Eastern Time (ET) hours.
+                - paragraph [ref=f4e162]: "I build agentic workflows and RAG systems — integrating LLMs with real data sources using LangChain, n8n, and local models via Ollama. Security is part of the design: I apply OWASP and AI safety practices, including prompt injection defense, from day one."
+                - heading "Outside work" [level=2] [ref=f4e163]:
+                  - generic [ref=f4e164] [cursor=pointer]
+                  - text: Outside work
+                - paragraph [ref=f4e168]: I'm Colombian — still figuring out the locals, but fully committed to the coffee. I'm into personal development, continuous learning, and building things that last — whether that's software or a good morning routine.
+              - link "Download CV (PDF)" [ref=f4e170] [cursor=pointer]:
+                - /url: /api/cv/pdf
+    - generic [ref=f4e172]:
+      - generic [ref=f4e173]:
+        - link "mail Mail" [ref=f4e174] [cursor=pointer]:
+          - /url: mailto:danialvadev@proton.me
+          - generic [ref=f4e175]: mail
+          - img "Mail" [ref=f4e176]
+        - link "github GitHub" [ref=f4e179] [cursor=pointer]:
+          - /url: https://github.com/tekodan
+          - generic [ref=f4e180]: github
+          - img "GitHub" [ref=f4e181]
+        - link "linkedin Linkedin" [ref=f4e183] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/dani-alva/
+          - generic [ref=f4e184]: linkedin
+          - img "Linkedin" [ref=f4e185]
+        - link "telegram Telegram" [ref=f4e187] [cursor=pointer]:
+          - /url: https://t.me/danialvadev
+          - generic [ref=f4e188]: telegram
+          - img "Telegram" [ref=f4e189]
+      - paragraph [ref=f4e191]: © 2026 Dani A. - Full Stack AI Developer. All rights reserved.
+  - alert [ref=f4e192]

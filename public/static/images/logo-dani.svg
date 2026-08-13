@@ -71,7 +71,7 @@
       <path d="M 612 178 Q 632 188, 658 184 Q 678 182, 690 172"
             stroke="#3a2410" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <circle cx="654" cy="100" r="9" fill="url(#mosaicTiles)" stroke="#3a2410" stroke-width="1.5"/>
-      <circle cx="656" cy="99" r="2.5" fill="#0f2424"/>
+      <circle cx="656" cy="99" r="2.5" fill="#0c1a1a"/>
       <circle cx="656" cy="99" r="1" fill="#f5e6d3"/>
     </g>
 

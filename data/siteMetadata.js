@@ -9,7 +9,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://danialva.com',
   siteRepo: 'https://github.com/tekodan/danialva.com',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo-dani.svg`,
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/new-logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'tekodan@gmail.com',
   github: 'https://github.com/tekodan',

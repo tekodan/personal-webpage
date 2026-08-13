@@ -33,10 +33,18 @@ const components = {
 type SocialIconProps = {
   kind: keyof typeof components
   href: string | undefined
-  size?: number
+  size?: 5 | 6 | 7 | 8
+  className?: string
 }
 
-const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
+const sizeMap = {
+  5: 'h-5 w-5',
+  6: 'h-6 w-6',
+  7: 'h-7 w-7',
+  8: 'h-8 w-8',
+}
+
+const SocialIcon = ({ kind, href, size = 8, className = '' }: SocialIconProps) => {
   if (
     !href ||
     (kind === 'mail' && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
@@ -47,15 +55,13 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
 
   return (
     <a
-      className="inline-flex h-11 min-h-11 w-11 min-w-11 items-center justify-center text-sm text-gray-500 transition hover:text-gray-600"
+      className={`inline-flex h-11 min-h-11 w-11 min-w-11 items-center justify-center text-sm text-current transition hover:opacity-80 ${className}`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}
     >
       <span className="sr-only">{kind}</span>
-      <SocialSvg
-        className={`hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200 h-${size} w-${size}`}
-      />
+      <SocialSvg className={`fill-current ${sizeMap[size]}`} />
     </a>
   )
 }

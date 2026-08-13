@@ -6,7 +6,7 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
     <div
       className={`${
         imgSrc && 'h-full'
-      } overflow-hidden rounded-md border-2 border-gray-200/60 dark:border-gray-700/60`}
+      } hover:border-accent/40 overflow-hidden rounded-md border border-white/10 bg-white/5 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.45)] transition`}
     >
       {imgSrc &&
         (href ? (
@@ -29,7 +29,7 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-1 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="text-brand-cream-100 mb-1 text-2xl leading-8 font-bold tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -39,18 +39,18 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
           )}
         </h2>
         {(company || year) && (
-          <p className="mb-3 text-sm text-gray-400 dark:text-gray-500">
+          <p className="mb-3 text-sm text-white/55">
             {company}
             {company && year && ' · '}
             {year}
           </p>
         )}
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="prose prose-invert mb-3 max-w-none">{description}</p>
         <div className="mb-4 flex flex-wrap gap-2">
           {tech?.map((t) => (
             <span
               key={t}
-              className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+              className="bg-brand-copper-500/15 text-brand-cream-200 ring-brand-copper-500/30 rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset"
             >
               {t}
             </span>
@@ -59,10 +59,10 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
         {href && (
           <Link
             href={href}
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+            className="text-accent inline-block text-base leading-6 font-medium underline-offset-4 transition hover:underline"
             aria-label={`Link to ${title}`}
           >
-            Learn more &rarr;
+            Learn more →
           </Link>
         )}
       </div>
