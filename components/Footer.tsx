@@ -7,17 +7,17 @@ export default function Footer() {
   const { email, github, linkedin, telegram } = coreContent(author)
 
   return (
-    <footer>
-      <div className="mt-16 flex flex-col items-center">
-        <div className="mb-3 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${email}`} size={6} />
+    <footer className="brand-mosaic-footer relative mt-20 w-full overflow-hidden">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-10 text-[#f5e6d3]">
+        <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
+          <SocialIcon kind="mail" href={email ? `mailto:${email}` : undefined} size={6} />
           <SocialIcon kind="github" href={github} size={6} />
           <SocialIcon kind="linkedin" href={linkedin} size={6} />
           <SocialIcon kind="telegram" href={telegram} size={6} />
         </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Dani Alva · All rights reserved
-        </div>
+        <p className="text-center text-sm font-medium tracking-wide text-[#f5e6d3] drop-shadow-[0_1px_1px_rgba(0,0,0,0.55)]">
+          © {new Date().getFullYear()} Dani A. - Full Stack AI Developer. All rights reserved.
+        </p>
       </div>
     </footer>
   )

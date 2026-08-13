@@ -2,7 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import { Space_Grotesk } from 'next/font/google'
+import { Pinyon_Script, Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
@@ -17,6 +17,13 @@ const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-space-grotesk',
+})
+
+const pinyon = Pinyon_Script({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-pinyon-script',
 })
 
 export const metadata: Metadata = {
@@ -67,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteMetadata.language}
-      className={`${space_grotesk.variable} dark scroll-smooth`}
+      className={`${space_grotesk.variable} ${pinyon.variable} dark scroll-smooth`}
       suppressHydrationWarning
     >
       <link

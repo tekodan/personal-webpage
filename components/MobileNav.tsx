@@ -34,13 +34,13 @@ const MobileNav = () => {
         aria-expanded={navShow}
         aria-controls="mobile-nav-panel"
         onClick={onToggleNav}
-        className="flex h-11 min-h-11 w-11 min-w-11 items-center justify-center sm:hidden"
+        className="brand-copper-bar fixed top-3 right-3 z-50 flex h-10 w-10 items-center justify-center rounded-sm border border-[#5a3920]/70 shadow-lg sm:hidden"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="hover:text-primary-500 dark:hover:text-primary-400 h-8 w-8 text-gray-900 dark:text-gray-100"
+          className="h-6 w-6 text-[#f5e6d3]"
         >
           <path
             fillRule="evenodd"
@@ -77,17 +77,17 @@ const MobileNav = () => {
             >
               <DialogPanel
                 id="mobile-nav-panel"
-                className="fixed top-0 left-0 z-70 h-full w-full bg-white/95 duration-300 dark:bg-gray-950/98"
+                className="brand-header-bg fixed inset-0 z-70 h-full w-full text-white duration-300"
               >
                 <nav
                   ref={navRef}
-                  className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
+                  className="mt-20 flex h-full basis-0 flex-col items-center gap-2 overflow-y-auto px-6 pt-2 text-center"
                 >
                   {headerNavLinks.map((link) => (
                     <Link
                       key={link.title}
                       href={link.href}
-                      className="hover:text-primary-500 dark:hover:text-primary-400 mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
+                      className="brand-menu-link my-2 py-3 text-2xl outline outline-0"
                       onClick={onToggleNav}
                     >
                       {link.title}
@@ -96,7 +96,7 @@ const MobileNav = () => {
                 </nav>
 
                 <button
-                  className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-4 right-4 z-80 flex h-11 w-11 items-center justify-center p-2 text-gray-900 dark:text-gray-100"
+                  className="brand-copper-bar fixed top-3 right-3 z-80 flex h-10 w-10 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3]"
                   aria-label="Close menu"
                   onClick={onToggleNav}
                 >

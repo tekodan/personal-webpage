@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-label="Dani A. — Full Stack AI Developer">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6d3"/>
+      <stop offset="40%" stop-color="#e0be91"/>
+      <stop offset="65%" stop-color="#c08f4e"/>
+      <stop offset="100%" stop-color="#8b5a3c"/>
+    </linearGradient>
+    <linearGradient id="darkStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a1f08"/>
+      <stop offset="100%" stop-color="#1d0e02"/>
+    </linearGradient>
+
+    <pattern id="mosaicTiles" patternUnits="userSpaceOnUse" width="22" height="22" patternTransform="rotate(6)">
+      <rect width="22" height="22" fill="#d68537"/>
+      <path d="M0 0 L11 0 L11 11 L0 11 Z" fill="#2d8a6f"/>
+      <path d="M11 11 L22 11 L22 22 L11 22 Z" fill="#b8651e"/>
+      <path d="M11 0 L22 0 L22 11 L11 11 Z" fill="#d4a440"/>
+      <path d="M0 11 L11 11 L11 22 L0 22 Z" fill="#1a7373"/>
+      <rect x="6" y="6" width="2" height="2" fill="#f5e6d3"/>
+      <rect x="16" y="16" width="2" height="2" fill="#f5e6d3"/>
+      <rect x="6" y="16" width="2" height="2" fill="#f5e6d3"/>
+      <rect x="16" y="6" width="2" height="2" fill="#f5e6d3"/>
+    </pattern>
+
+    <pattern id="mosaicTextTiles" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(-3)">
+      <rect width="14" height="14" fill="#e0be91"/>
+      <path d="M0 0 L7 0 L7 7 L0 7 Z" fill="#d4a440"/>
+      <path d="M7 7 L14 7 L14 14 L7 14 Z" fill="#8b5a3c"/>
+      <path d="M7 0 L14 0 L14 7 L7 7 Z" fill="#c08f4e"/>
+      <path d="M0 7 L7 7 L7 14 L0 14 Z" fill="#f5e6d3"/>
+    </pattern>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <path id="geckoBody"
+          d="M 60 220
+             Q 40 200, 60 178
+             Q 90 152, 160 138
+             Q 240 124, 320 132
+             Q 400 142, 470 168
+             Q 540 192, 600 184
+             Q 660 176, 690 152
+             Q 712 134, 700 110
+             Q 686 92, 654 96
+             Q 620 102, 600 124
+             Q 584 142, 584 162
+             Q 586 178, 600 184
+             Q 614 188, 622 178" />
+
+    <path id="geckoOutline" d="M 60 220 Q 40 200, 60 178 Q 90 152, 160 138 Q 240 124, 320 132 Q 400 142, 470 168 Q 540 192, 600 184 Q 660 176, 690 152 Q 712 134, 700 110 Q 686 92, 654 96 Q 620 102, 600 124 Q 584 142, 584 162 Q 586 178, 600 184 Q 614 188, 622 178" fill="none"/>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <use href="#geckoBody" stroke="url(#darkStroke)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <use href="#geckoBody" stroke="url(#mosaicTiles)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <use href="#geckoOutline" stroke="#3a2410" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+    <g>
+      <path d="M 612 178 Q 632 188, 658 184 Q 678 182, 690 172"
+            stroke="#3a2410" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="654" cy="100" r="9" fill="url(#mosaicTiles)" stroke="#3a2410" stroke-width="1.5"/>
+      <circle cx="656" cy="99" r="2.5" fill="#0f2424"/>
+      <circle cx="656" cy="99" r="1" fill="#f5e6d3"/>
+    </g>
+
+    <g stroke="#3a2410" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.65">
+      <path d="M 660 90 L 666 76"/>
+      <path d="M 670 92 L 682 80"/>
+      <path d="M 668 102 L 682 102"/>
+      <path d="M 660 106 L 668 118"/>
+      <path d="M 648 102 L 636 102"/>
+    </g>
+  </g>
+
+  <g transform="translate(180, 175)">
+    <text x="0" y="0"
+          font-family="var(--font-pinyon-script), 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', 'Lucida Handwriting', 'Brush Script MT', cursive, serif"
+          font-size="118"
+          font-weight="400"
+          fill="url(#mosaicTextTiles)"
+          stroke="#3a1f08"
+          stroke-width="1.2"
+          paint-order="stroke fill">Dani A.</text>
+  </g>
+
+  <g transform="translate(380, 260)" text-anchor="middle">
+    <text x="0" y="0"
+          font-family="var(--font-space-grotesk), 'Space Grotesk', 'Inter', system-ui, sans-serif"
+          font-size="22"
+          letter-spacing="8"
+          fill="#f5e6d3"
+          font-weight="500">FULL STACK AI DEVELOPER</text>
+  </g>
+</svg>
