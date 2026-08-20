@@ -52,3 +52,10 @@ yarn-error.log*
 
 AGENTS.md
 CLAUDE.md
+GEMINI.md
+
+# playwright mcp
+.playwright-mcp/
+
+# faq docs (not part of site)
+faq/
