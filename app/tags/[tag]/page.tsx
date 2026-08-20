@@ -22,7 +22,7 @@ export async function generateMetadata(props: {
   const tag = decodeURI(params.tag)
   return genPageMetadata({
     title: `${tag} — Articles`,
-    description: `Posts tagged "${tag}" — articles on backend engineering, productivity, AI, and software architecture by Dani Alva.`,
+    description: `Posts tagged "${tag}" — articles on backend engineering, productivity, AI, and software architecture by Dani Alvarez.`,
     alternates: {
       canonical: './',
       types: {

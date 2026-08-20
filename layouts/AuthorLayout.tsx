@@ -17,7 +17,7 @@ export default function AuthorLayout({ children, content }: Props) {
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">About</h1>
         </header>
 
-        <hr className="border-0 border-t border-white/10" />
+        <hr className="border-brand-line border-0 border-t" />
 
         <main className="py-14">
           <div className="grid gap-12 md:grid-cols-[320px_1fr]">
@@ -51,7 +51,7 @@ export default function AuthorLayout({ children, content }: Props) {
                   <div className="mt-4 space-y-4">
                     {skills.map((cat) => (
                       <div key={cat.category}>
-                        <p className="text-brand-gold-400/70 mb-1.5 text-[10px] tracking-[0.15em] uppercase">
+                        <p className="text-brand-bronze-400/80 mb-1.5 text-[10px] tracking-[0.15em] uppercase">
                           {cat.category}
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -71,7 +71,7 @@ export default function AuthorLayout({ children, content }: Props) {
               )}
             </aside>
 
-            <section className="text-justify md:border-l md:border-white/10 md:pl-10">
+            <section className="md:border-brand-line text-justify md:border-l md:pl-10">
               <div className="prose prose-invert max-w-[65ch] leading-[1.85] [&_h2]:mt-0 [&_h2]:mb-0 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-white [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-white [&_li]:text-justify [&_p]:mt-6 [&_p]:max-w-[65ch] [&_p]:text-justify [&_p]:leading-[1.85] [&_p]:text-white/70">
                 {children}
               </div>

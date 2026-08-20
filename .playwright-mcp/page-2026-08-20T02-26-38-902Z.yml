@@ -1,0 +1,245 @@
+- generic [active] [ref=f8e1]:
+  - link "Skip to main content" [ref=f8e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f8e3]:
+    - generic [ref=f8e4]:
+      - link "Dani Alvarez" [ref=f8e5] [cursor=pointer]:
+        - /url: /
+        - img "Dani Alvarez logo" [ref=f8e6]
+      - navigation "Primary" [ref=f8e7]:
+        - list [ref=f8e8]:
+          - listitem [ref=f8e9]:
+            - link "Home" [ref=f8e10] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f8e11]: "|"
+          - listitem [ref=f8e12]:
+            - link "About" [ref=f8e13] [cursor=pointer]:
+              - /url: /about/
+            - generic [ref=f8e14]: "|"
+          - listitem [ref=f8e15]:
+            - link "Projects" [ref=f8e16] [cursor=pointer]:
+              - /url: /projects/
+            - generic [ref=f8e17]: "|"
+          - listitem [ref=f8e18]:
+            - link "Blog" [ref=f8e19] [cursor=pointer]:
+              - /url: /blog/
+      - generic [ref=f8e20]:
+        - link "Log in" [ref=f8e21] [cursor=pointer]:
+          - /url: /about/
+        - link "Get Started" [ref=f8e22] [cursor=pointer]:
+          - /url: /about/
+  - main [ref=f8e24]:
+    - generic [ref=f8e26]:
+      - generic [ref=f8e27]:
+        - heading "Projects" [level=1] [ref=f8e28]
+        - paragraph [ref=f8e29]: A selection of products and platforms I've built or contributed to across AI-native development, e-commerce, SaaS, and civic tech.
+      - separator [ref=f8e30]
+      - generic [ref=f8e32]:
+        - generic [ref=f8e35]:
+          - heading [level=2] [ref=f8e36]:
+            - link "Link to Enola — Investigadora Digital" [ref=f8e37] [cursor=pointer]:
+              - /url: https://enola.ronin.com.co
+              - text: Enola — Investigadora Digital
+          - paragraph [ref=f8e38]: Ronin · 2026
+          - paragraph [ref=f8e39]: AI-powered digital investigation assistant built on a Python RAG pipeline grounded in Google Gemma 4. LangChain orchestration with ChromaDB vector storage; retrieves and synthesizes evidence with a conversational, streaming interface.
+          - generic [ref=f8e40]:
+            - generic [ref=f8e41]: Python
+            - generic [ref=f8e42]: RAG
+            - generic [ref=f8e43]: Gemma 4
+            - generic [ref=f8e44]: LangChain
+            - generic [ref=f8e45]: ChromaDB
+            - generic [ref=f8e46]: AI Agents
+            - generic [ref=f8e47]: Streaming
+          - link "Link to Enola — Investigadora Digital" [ref=f8e48] [cursor=pointer]:
+            - /url: https://enola.ronin.com.co
+            - text: Learn more →
+        - generic [ref=f8e51]:
+          - heading [level=2] [ref=f8e52]:
+            - link "Link to Todomoda" [ref=f8e53] [cursor=pointer]:
+              - /url: https://todomoda.com
+              - text: Todomoda
+          - paragraph [ref=f8e54]: Blue Star Group · 2021
+          - paragraph [ref=f8e55]: Implementation of the e-commerce platform under a "Phygital" strategy for the leading accessory brand in LATAM. Integration of 800+ physical stores with the digital channel and optimization for high-demand events like Hot Sale.
+          - generic [ref=f8e56]:
+            - generic [ref=f8e57]: Adobe Commerce
+            - generic [ref=f8e58]: Magento
+            - generic [ref=f8e59]: PHP
+            - generic [ref=f8e60]: MySQL
+            - generic [ref=f8e61]: Redis
+          - link "Link to Todomoda" [ref=f8e62] [cursor=pointer]:
+            - /url: https://todomoda.com
+            - text: Learn more →
+        - generic [ref=f8e65]:
+          - heading [level=2] [ref=f8e66]:
+            - link "Link to Isadora" [ref=f8e67] [cursor=pointer]:
+              - /url: https://www.shopisadora.com
+              - text: Isadora
+          - paragraph [ref=f8e68]: Blue Star Group · 2021
+          - paragraph [ref=f8e69]: Deployment of online stores with a focus on personalization and real-time inventory synchronization across 11 countries. Scalable architecture built on Adobe Commerce to support global traffic peaks.
+          - generic [ref=f8e70]:
+            - generic [ref=f8e71]: Adobe Commerce
+            - generic [ref=f8e72]: Magento
+            - generic [ref=f8e73]: PHP
+            - generic [ref=f8e74]: Varnish
+            - generic [ref=f8e75]: MySQL
+          - link "Link to Isadora" [ref=f8e76] [cursor=pointer]:
+            - /url: https://www.shopisadora.com
+            - text: Learn more →
+        - generic [ref=f8e79]:
+          - heading [level=2] [ref=f8e80]:
+            - link "Link to RadioShack (Unicomer)" [ref=f8e81] [cursor=pointer]:
+              - /url: https://www.radioshackla.com
+              - text: RadioShack (Unicomer)
+          - paragraph [ref=f8e82]: Unicomer · 2024
+          - paragraph [ref=f8e83]: Total redesign of the e-commerce platform for Central and South America. Implementation of a unified backend for multi-country management and integration with global marketplaces like Amazon and Walmart.
+          - generic [ref=f8e84]:
+            - generic [ref=f8e85]: Adobe Commerce
+            - generic [ref=f8e86]: Magento
+            - generic [ref=f8e87]: PHP
+            - generic [ref=f8e88]: Elasticsearch
+          - link "Link to RadioShack (Unicomer)" [ref=f8e89] [cursor=pointer]:
+            - /url: https://www.radioshackla.com
+            - text: Learn more →
+        - generic [ref=f8e92]:
+          - heading [level=2] [ref=f8e93]:
+            - link "Link to FYA Ferretería" [ref=f8e94] [cursor=pointer]:
+              - /url: https://www.fya.pe
+              - text: FYA Ferretería
+          - paragraph [ref=f8e95]: Summa Solutions (Infracommerce) · 2021
+          - paragraph [ref=f8e96]: Development of a hybrid B2B/B2C e-commerce portal for construction materials. Features advanced faceted search for complex technical catalogs and custom pricing rules.
+          - generic [ref=f8e97]:
+            - generic [ref=f8e98]: Magento 2
+            - generic [ref=f8e99]: PHP
+            - generic [ref=f8e100]: MySQL
+            - generic [ref=f8e101]: Elasticsearch
+          - link "Link to FYA Ferretería" [ref=f8e102] [cursor=pointer]:
+            - /url: https://www.fya.pe
+            - text: Learn more →
+        - generic [ref=f8e105]:
+          - heading [level=2] [ref=f8e106]:
+            - link "Link to Sole" [ref=f8e107] [cursor=pointer]:
+              - /url: https://www.sole.com.pe
+              - text: Sole
+          - paragraph [ref=f8e108]: Summa Solutions (Infracommerce) · 2022
+          - paragraph [ref=f8e109]: Conversion-oriented platform for household appliances. Includes technical installation scheduling directly from the checkout and integration with local payment gateways.
+          - generic [ref=f8e110]:
+            - generic [ref=f8e111]: Magento
+            - generic [ref=f8e112]: PHP
+            - generic [ref=f8e113]: MySQL
+            - generic [ref=f8e114]: ERP Integration
+          - link "Link to Sole" [ref=f8e115] [cursor=pointer]:
+            - /url: https://www.sole.com.pe
+            - text: Learn more →
+        - generic [ref=f8e118]:
+          - heading [level=2] [ref=f8e119]:
+            - link "Link to Compuconta" [ref=f8e120] [cursor=pointer]:
+              - /url: https://www.compuconta.com
+              - text: Compuconta
+          - paragraph [ref=f8e121]: Compuconta Software · 2012
+          - paragraph [ref=f8e122]: Modernization of a leading ERP for public and private sectors in Colombia. Development of electronic payroll, invoicing, and accounting modules using PHP (Laravel/Symfony) standards.
+          - generic [ref=f8e123]:
+            - generic [ref=f8e124]: PHP
+            - generic [ref=f8e125]: Laravel
+            - generic [ref=f8e126]: Symfony
+            - generic [ref=f8e127]: MySQL
+            - generic [ref=f8e128]: React
+            - generic [ref=f8e129]: PostgreSQL
+          - link "Link to Compuconta" [ref=f8e130] [cursor=pointer]:
+            - /url: https://www.compuconta.com
+            - text: Learn more →
+        - generic [ref=f8e133]:
+          - heading [level=2] [ref=f8e134]:
+            - link "Link to ClinicalApp (Sion Ingeniería)" [ref=f8e135] [cursor=pointer]:
+              - /url: https://clinicalapp.com.co
+              - text: ClinicalApp (Sion Ingeniería)
+          - paragraph [ref=f8e136]: Sion Ingeniería · 2020
+          - paragraph [ref=f8e137]: SaaS for digitizing medical and dental processes. Includes electronic health records with interactive odontograms, appointment scheduling, and administrative management for clinics.
+          - generic [ref=f8e138]:
+            - generic [ref=f8e139]: PHP
+            - generic [ref=f8e140]: Laravel
+            - generic [ref=f8e141]: SQL Server
+          - link "Link to ClinicalApp (Sion Ingeniería)" [ref=f8e142] [cursor=pointer]:
+            - /url: https://clinicalapp.com.co
+            - text: Learn more →
+        - generic [ref=f8e145]:
+          - heading [level=2] [ref=f8e146]:
+            - link "Link to GanaPAE" [ref=f8e147] [cursor=pointer]:
+              - /url: https://www.funcionpublica.gov.co/eva/admon/files/premios/Indigo_2017.pdf
+              - text: GanaPAE
+          - paragraph [ref=f8e148]: Narino Government · 2017
+          - paragraph [ref=f8e149]: Transparency platform awarded the national INDIGO 2017 Prize (MinTIC) and the Ingenio 2018 Prize (Fedesoft) for open government innovation. (Project currently non-operational).
+          - generic [ref=f8e150]:
+            - generic [ref=f8e151]: PHP
+            - generic [ref=f8e152]: MySQL
+            - generic [ref=f8e153]: Google Maps API
+            - generic [ref=f8e154]: Open Data
+            - generic [ref=f8e155]: Java
+            - generic [ref=f8e156]: Android
+          - link "Link to GanaPAE" [ref=f8e157] [cursor=pointer]:
+            - /url: https://www.funcionpublica.gov.co/eva/admon/files/premios/Indigo_2017.pdf
+            - text: Learn more →
+        - generic [ref=f8e160]:
+          - heading [level=2] [ref=f8e161]:
+            - link "Link to Museo Virtual del Carnaval" [ref=f8e162] [cursor=pointer]:
+              - /url: https://narino.gov.co/museo-virtual-del-carnaval-de-negros-y-blancos-de-pasto-ganador-de-los-premios-ingenio-2018/
+              - text: Museo Virtual del Carnaval
+          - paragraph [ref=f8e163]: Narino Government · 2018
+          - paragraph [ref=f8e164]: 3D immersive nominated Indigo 2018 Prize by Mintic in the Social Impact category. Uses photogrammetry to preserve regional cultural heritage. (Project currently non-operational).
+          - generic [ref=f8e165]:
+            - generic [ref=f8e166]: Unity
+            - generic [ref=f8e167]: Sketchfab
+            - generic [ref=f8e168]: Photogrammetry
+            - generic [ref=f8e169]: Java
+          - link "Link to Museo Virtual del Carnaval" [ref=f8e170] [cursor=pointer]:
+            - /url: https://narino.gov.co/museo-virtual-del-carnaval-de-negros-y-blancos-de-pasto-ganador-de-los-premios-ingenio-2018/
+            - text: Learn more →
+        - generic [ref=f8e173]:
+          - heading [level=2] [ref=f8e174]:
+            - link "Link to ERIS - Innovation Ecosystem" [ref=f8e175] [cursor=pointer]:
+              - /url: https://narino.gov.co/gobernacion-de-narino-lanza-eris-la-primera-plataforma-digital-de-mapeo-de-iniciativas-sociales-en-el-departamento/
+              - text: ERIS - Innovation Ecosystem
+          - paragraph [ref=f8e176]: Narino Government · 2019
+          - paragraph [ref=f8e177]: Digital mapping platform for social initiatives launched by the Nariño Social Innovation Center (CISNA) to foster community collaboration. (Project currently non-operational).
+          - generic [ref=f8e178]:
+            - generic [ref=f8e179]: Angular
+            - generic [ref=f8e180]: Laravel
+            - generic [ref=f8e181]: MySQL
+            - generic [ref=f8e182]: Geolocation
+          - link "Link to ERIS - Innovation Ecosystem" [ref=f8e183] [cursor=pointer]:
+            - /url: https://narino.gov.co/gobernacion-de-narino-lanza-eris-la-primera-plataforma-digital-de-mapeo-de-iniciativas-sociales-en-el-departamento/
+            - text: Learn more →
+        - generic [ref=f8e186]:
+          - heading [level=2] [ref=f8e187]:
+            - link "Link to Dale la Pata" [ref=f8e188] [cursor=pointer]:
+              - /url: https://dalelapata.narino.gov.co
+              - text: Dale la Pata
+          - paragraph [ref=f8e189]: Narino Government · 2018
+          - paragraph [ref=f8e190]: Pioneering animal welfare platform for the centralization and traceability of the adoption process, managing information for animal-welfare foundations across Nariño. Uses social storytelling to boost adoption and dog/cat neutering campaigns. Recognized as a world best practice by UNDP. (Project currently non-operational).
+          - generic [ref=f8e191]:
+            - generic [ref=f8e192]: Python
+            - generic [ref=f8e193]: Django
+            - generic [ref=f8e194]: MySQL
+            - generic [ref=f8e195]: Social Innovation
+          - link "Link to Dale la Pata" [ref=f8e196] [cursor=pointer]:
+            - /url: https://dalelapata.narino.gov.co
+            - text: Learn more →
+  - contentinfo [ref=f8e197]:
+    - generic [ref=f8e198]:
+      - generic [ref=f8e199]:
+        - link "mail Mail" [ref=f8e200] [cursor=pointer]:
+          - /url: mailto:danialvarezdev@proton.me
+          - generic [ref=f8e201]: mail
+          - img "Mail" [ref=f8e202]
+        - link "github GitHub" [ref=f8e205] [cursor=pointer]:
+          - /url: https://github.com/tekodan
+          - generic [ref=f8e206]: github
+          - img "GitHub" [ref=f8e207]
+        - link "linkedin Linkedin" [ref=f8e209] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/dani-alvarez/
+          - generic [ref=f8e210]: linkedin
+          - img "Linkedin" [ref=f8e211]
+        - link "telegram Telegram" [ref=f8e213] [cursor=pointer]:
+          - /url: https://t.me/danialvarezdev
+          - generic [ref=f8e214]: telegram
+          - img "Telegram" [ref=f8e215]
+      - paragraph [ref=f8e217]: © 2026 Dani A. — Full Stack AI Developer. All rights reserved.

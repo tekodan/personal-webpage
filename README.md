@@ -1,6 +1,6 @@
-# danialva.com
+# danialvarez.com
 
-Personal website and blog of **Dani Alva** — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms.
+Personal website and blog of **Dani Alvarez** — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms.
 
 Built with **Next.js 15**, **Tailwind CSS 4**, and **Contentlayer** for MDX content.
 
@@ -51,4 +51,4 @@ Deployed via GitHub Actions to GitHub Pages. See `.github/workflows/pages.yml`.
 
 ## License
 
-MIT © Dani Alva
+MIT © Dani Alvarez

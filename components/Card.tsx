@@ -29,7 +29,7 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
           />
         ))}
       <div className="p-6">
-        <h2 className="text-brand-cream-100 mb-1 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="text-brand-cream-100 mb-1 text-2xl leading-8 font-semibold tracking-tight">
           {href ? (
             <Link href={href} aria-label={`Link to ${title}`}>
               {title}
@@ -50,7 +50,7 @@ const Card = ({ title, description, imgSrc, href, tech, company, year }) => (
           {tech?.map((t) => (
             <span
               key={t}
-              className="bg-brand-copper-500/15 text-brand-cream-200 ring-brand-copper-500/30 rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset"
+              className="bg-brand-bronze-500/15 text-brand-cream-200 ring-brand-bronze-500/30 rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset"
             >
               {t}
             </span>

@@ -56,7 +56,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             </div>
           </header>
           <div className="grid-rows-[auto_1fr] divide-y divide-white/10 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
-            <dl className="pt-6 pb-10 xl:border-b xl:border-white/10 xl:pt-11">
+            <dl className="xl:border-brand-line pt-6 pb-10 xl:border-b xl:pt-11">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-y-8 xl:space-x-0">
@@ -79,7 +79,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                           {author.twitter && (
                             <Link
                               href={author.twitter}
-                              className="text-accent hover:text-brand-gold-400"
+                              className="text-accent hover:text-brand-bronze-300"
                             >
                               {author.twitter
                                 .replace('https://twitter.com/', '@')
@@ -127,7 +127,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs tracking-wide text-white/55 uppercase">
                           Previous Article
                         </h2>
-                        <div className="text-accent hover:text-brand-gold-400">
+                        <div className="text-accent hover:text-brand-bronze-300">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
                         </div>
                       </div>
@@ -137,7 +137,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                         <h2 className="text-xs tracking-wide text-white/55 uppercase">
                           Next Article
                         </h2>
-                        <div className="text-accent hover:text-brand-gold-400">
+                        <div className="text-accent hover:text-brand-bronze-300">
                           <Link href={`/${next.path}`}>{next.title}</Link>
                         </div>
                       </div>
@@ -148,7 +148,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="pt-4 xl:pt-8">
                 <Link
                   href={`/${basePath}`}
-                  className="text-accent hover:text-brand-gold-400"
+                  className="text-accent hover:text-brand-bronze-300"
                   aria-label="Back to the blog"
                 >
                   &larr; Back to the blog

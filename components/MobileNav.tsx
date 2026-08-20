@@ -36,7 +36,7 @@ const MobileNav = () => {
         aria-hidden={navShow}
         tabIndex={navShow ? -1 : 0}
         onClick={onToggleNav}
-        className={`brand-copper-bar fixed top-3 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3] shadow-lg sm:hidden ${
+        className={`bg-brand-slate-500 border-brand-slate-400 text-brand-cream-100 fixed top-3 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-sm border shadow-lg sm:hidden ${
           navShow ? 'pointer-events-none invisible' : ''
         }`}
       >
@@ -100,7 +100,7 @@ const MobileNav = () => {
                 </nav>
 
                 <button
-                  className="brand-copper-bar focus:outline-accent fixed top-3 right-3 z-80 flex h-11 w-11 items-center justify-center rounded-sm border border-[#5a3920]/70 text-[#f5e6d3]"
+                  className="bg-brand-slate-500 focus:outline-accent border-brand-slate-400 text-brand-cream-100 fixed top-3 right-3 z-80 flex h-11 w-11 items-center justify-center rounded-sm border"
                   aria-label="Close menu"
                   onClick={onToggleNav}
                 >

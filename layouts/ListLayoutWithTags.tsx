@@ -83,7 +83,7 @@ export default function ListLayoutWithTags({
     <>
       <div>
         <div className="pt-6 pb-6">
-          <h1 className="text-brand-cream-100 text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-brand-cream-100 text-3xl leading-9 font-semibold tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
         </div>
@@ -140,7 +140,7 @@ export default function ListLayoutWithTags({
                       </dl>
                       <div className="space-y-3">
                         <div>
-                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
+                          <h2 className="text-2xl leading-8 font-semibold tracking-tight">
                             <Link
                               href={`/${path}`}
                               className="text-brand-cream-100 hover:text-accent transition"

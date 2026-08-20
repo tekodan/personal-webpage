@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://dani-ai.com/:1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "danialvarez.com" }]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://dani-ai.com/:1",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.danialvarez.com" }]
+    }
+  ]
+}

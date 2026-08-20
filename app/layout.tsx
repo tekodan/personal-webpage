@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       {appConfig.features.blog && (
         <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       )}
-      <body className="bg-brand-deep text-brand-cream-100 leading-relaxed antialiased">
+      <body className="brand-section-bg text-brand-cream-100 leading-relaxed antialiased">
         <a
           href="#main-content"
           className="focus:bg-accent focus:text-on-accent sr-only z-[200] focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:rounded focus:px-4 focus:py-2"

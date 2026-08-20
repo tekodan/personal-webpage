@@ -23,14 +23,14 @@ export default async function Page() {
 
   return (
     <div className="brand-section-bg text-brand-cream-100 relative right-1/2 left-1/2 -mx-[50vw] w-screen">
-      <div className="mx-auto max-w-5xl px-6 py-16 sm:px-8">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 xl:px-10">
         <header className="mb-10">
           <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Tags</h1>
           <p className="mt-3 text-sm text-white/55">
             Browse every post by topic. Larger counts surface trending areas.
           </p>
         </header>
-        <hr className="border-0 border-t border-white/10" />
+        <hr className="border-brand-line border-0 border-t" />
         <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-4">
           {tagKeys.length === 0 && <li className="text-white/55">No tags found.</li>}
           {sortedTags.map((t) => (

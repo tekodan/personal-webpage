@@ -1,0 +1,281 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - link "Dani Alva" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Dani Alva logo" [ref=e7]
+    - navigation "Primary" [ref=e9]:
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "Home" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e13]: "|"
+        - listitem [ref=e14]:
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: /about/
+          - generic [ref=e16]: "|"
+        - listitem [ref=e17]:
+          - link "Projects" [ref=e18] [cursor=pointer]:
+            - /url: /projects/
+          - generic [ref=e19]: "|"
+        - listitem [ref=e20]:
+          - link "Blog" [ref=e21] [cursor=pointer]:
+            - /url: /blog/
+  - main [ref=e23]:
+    - generic:
+      - generic:
+        - generic: dev_mode unlocked
+        - generic: ·
+        - generic: built by dani
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - paragraph [ref=e29]: Dani Alva · AI Full-Stack Developer
+        - heading "I build production AI systems — not just demos." [level=1] [ref=e30]
+        - paragraph [ref=e31]: RAG, agents and full-stack products, backed by 14+ years shipping production software across retail, SaaS, and civic tech.
+        - generic [ref=e32]:
+          - link "View selected work" [ref=e33] [cursor=pointer]:
+            - /url: /projects/
+          - link "See Enola in action" [ref=e34] [cursor=pointer]:
+            - /url: https://enola.ronin.com.co
+        - generic [ref=e36]:
+          - region "Project carousel" [ref=e37]:
+            - generic [ref=e38]:
+              - generic:
+                - link:
+                  - /url: https://enola.ronin.com.co
+                  - generic:
+                    - generic:
+                      - paragraph: AI / Agentic
+                      - generic: "2026"
+                    - heading [level=3]: Enola — Investigadora Digital
+              - generic:
+                - link:
+                  - /url: https://www.radioshackla.com
+                  - generic:
+                    - generic:
+                      - paragraph: E-commerce / Retail
+                      - generic: "2024"
+                    - heading [level=3]: RadioShack (Unicomer)
+              - generic:
+                - link:
+                  - /url: https://todomoda.com
+                  - generic:
+                    - generic:
+                      - paragraph: E-commerce / Retail
+                      - generic: "2021"
+                    - heading [level=3]: Todomoda (Blue Star Group)
+              - generic:
+                - link:
+                  - /url: https://www.shopisadora.com
+                  - generic:
+                    - generic:
+                      - paragraph: E-commerce / Retail
+                      - generic: "2021"
+                    - heading [level=3]: Isadora (Blue Star Group)
+              - link "Sole (Infracommerce)" [ref=e311] [cursor=pointer]:
+                - /url: https://www.sole.com.pe
+                - img "Sole (Infracommerce)" [ref=e313]
+                - generic [ref=e315]:
+                  - generic [ref=e316]:
+                    - paragraph [ref=e317]: E-commerce / Retail
+                    - generic [ref=e318]: "2022"
+                  - heading "Sole (Infracommerce)" [level=3] [ref=e319]
+              - link "FYA Ferretería (Infracommerce)" [ref=e321] [cursor=pointer]:
+                - /url: https://www.fya.pe
+                - img "FYA Ferretería (Infracommerce)" [ref=e323]
+                - generic [ref=e325]:
+                  - generic [ref=e326]:
+                    - paragraph [ref=e327]: E-commerce / Retail
+                    - generic [ref=e328]: "2021"
+                  - heading "FYA Ferretería (Infracommerce)" [level=3] [ref=e329]
+                  - generic [ref=e330]:
+                    - generic [ref=e331]: Magento 2
+                    - generic [ref=e332]: Elasticsearch
+              - link "ClinicalApp" [ref=e334] [cursor=pointer]:
+                - /url: https://clinicalapp.com.co
+                - img "ClinicalApp" [ref=e336]
+                - generic [ref=e338]:
+                  - generic [ref=e339]:
+                    - paragraph [ref=e340]: Healthcare SaaS
+                    - generic [ref=e341]: "2020"
+                  - heading "ClinicalApp" [level=3] [ref=e342]
+                  - paragraph [ref=e343]: SaaS digitizing medical and dental processes — electronic records, odontograms, and administration for clinics.
+                  - generic [ref=e344]:
+                    - generic [ref=e345]: PHP
+                    - generic [ref=e346]: Laravel
+                    - generic [ref=e347]: SQL Server
+              - link "Compuconta" [ref=e349] [cursor=pointer]:
+                - /url: https://www.compuconta.com
+                - img "Compuconta" [ref=e351]
+                - generic [ref=e353]:
+                  - generic [ref=e354]:
+                    - paragraph [ref=e355]: Enterprise ERP
+                    - generic [ref=e356]: "2012"
+                  - heading "Compuconta" [level=3] [ref=e357]
+                  - generic [ref=e358]:
+                    - generic [ref=e359]: PHP
+                    - generic [ref=e360]: React
+                    - generic [ref=e361]: PostgreSQL
+              - link "GanaPAE" [ref=e79] [cursor=pointer]:
+                - /url: https://ganapae.narino.gov.co/public/
+                - img "GanaPAE" [ref=e81]
+                - generic [ref=e83]:
+                  - generic [ref=e84]:
+                    - paragraph [ref=e85]: Civic Tech
+                    - generic [ref=e86]: 2017 · INDIGO Prize
+                  - heading "GanaPAE" [level=3] [ref=e87]
+              - generic:
+                - link:
+                  - /url: https://dalelapata.narino.gov.co
+                  - generic:
+                    - generic:
+                      - paragraph: Civic Tech / Animal Welfare
+                      - generic: 2018 · UNDP
+                    - heading [level=3]: Dale la Pata
+            - button "Previous project" [ref=e101]
+            - button "Next project" [ref=e104]
+          - generic [ref=e107]:
+            - button "Go to project 1" [ref=e108]
+            - button "Go to project 2" [ref=e110]
+            - button "Go to project 3" [ref=e112]
+            - button "Go to project 4" [ref=e114]
+            - button "Go to project 5" [ref=e116]
+            - button "Go to project 6" [ref=e118]
+            - button "Go to project 7" [ref=e120]
+            - button "Go to project 8" [ref=e122]
+            - button "Go to project 9" [ref=e124]
+            - button "Go to project 10" [ref=e126]
+        - paragraph [ref=e128]:
+          - status [ref=e130]: Available for remote projects
+      - separator [ref=e131]
+      - generic [ref=e133]:
+        - heading "Key Highlights" [level=2] [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: 14+
+            - paragraph [ref=e139]: Years of experience
+          - generic [ref=e140]:
+            - generic [ref=e141]: 12+
+            - paragraph [ref=e143]: Projects delivered
+          - generic [ref=e144]:
+            - generic [ref=e145]: "7"
+            - paragraph [ref=e146]: Countries deployed
+          - generic [ref=e147]:
+            - generic [ref=e148]: "3"
+            - paragraph [ref=e149]: Awards & recognition
+      - separator [ref=e150]
+      - generic [ref=e151]:
+        - paragraph [ref=e152]: Brands I have worked with
+        - region "Brands I have worked with" [ref=e153]:
+          - generic [ref=e154]:
+            - img "Todo Moda logo" [ref=e156]
+            - img "Isadora logo" [ref=e158]
+            - img "FYA logo" [ref=e160]
+            - img "Sole logo" [ref=e162]
+            - img "Cuidado con el Perro logo" [ref=e164]
+            - img "Porsche Colombia logo" [ref=e166]
+            - img "Converse Chile logo" [ref=e168]
+            - img "North Face logo" [ref=e170]
+            - img "Gollo logo" [ref=e172]
+            - img "RadioShack logo" [ref=e174]
+            - img "Gobernación de Nariño logo" [ref=e176]
+            - img "Compuconta logo" [ref=e178]
+            - img "ClinicalApp logo" [ref=e180]
+            - img "Todo Moda logo" [ref=e182]
+            - img "Isadora logo" [ref=e184]
+            - img "FYA logo" [ref=e186]
+            - img "Sole logo" [ref=e188]
+            - img "Cuidado con el Perro logo" [ref=e190]
+            - img "Porsche Colombia logo" [ref=e192]
+            - img "Converse Chile logo" [ref=e194]
+            - img "North Face logo" [ref=e196]
+            - img "Gollo logo" [ref=e198]
+            - img "RadioShack logo" [ref=e200]
+            - img "Gobernación de Nariño logo" [ref=e202]
+            - img "Compuconta logo" [ref=e204]
+            - img "ClinicalApp logo" [ref=e206]
+      - separator [ref=e207]
+      - generic [ref=e209]:
+        - img "Dani Alva profile photo" [ref=e210]
+        - heading "Dani Alva — AI Full-Stack Developer · RAG & Agentic Systems" [level=2] [ref=e211]
+        - paragraph [ref=e212]: AI Full-Stack Developer with 14+ years building AI-native products end to end — from RAG pipelines and agentic systems to production-grade full-stack and e-commerce platforms for enterprise brands.
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - heading "AI-Native Development" [level=3] [ref=e215]
+            - paragraph [ref=e217]: RAG, agents, generative UI
+          - generic [ref=e218]:
+            - heading "Production-Grade Full-Stack" [level=3] [ref=e219]
+            - paragraph [ref=e221]: APIs, microservices, headless
+          - generic [ref=e222]:
+            - heading "AI Workflow Automation" [level=3] [ref=e223]
+            - paragraph [ref=e225]: LangChain, n8n, local models via Ollama
+        - link "Read full About page" [ref=e227] [cursor=pointer]:
+          - /url: /about/
+      - separator [ref=e228]
+      - generic [ref=e229]:
+        - heading "Full-Stack + AI" [level=2] [ref=e230]
+        - paragraph [ref=e231]: A complete stack — from agentic AI to production interfaces — so intelligence ships end to end.
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - heading "Agentic AI" [level=3] [ref=e234]
+            - list [ref=e235]:
+              - listitem [ref=e236]: RAG
+              - listitem [ref=e238]: LangChain
+              - listitem [ref=e240]: AI Agents
+              - listitem [ref=e242]: Function Calling
+              - listitem [ref=e244]: Gemma 4
+              - listitem [ref=e246]: Ollama
+          - generic [ref=e248]:
+            - heading "Data & Retrieval" [level=3] [ref=e249]
+            - list [ref=e250]:
+              - listitem [ref=e251]: ChromaDB
+              - listitem [ref=e253]: Vector DBs
+              - listitem [ref=e255]: Prompt Engineering
+              - listitem [ref=e257]: Model Routing
+              - listitem [ref=e259]: Evals
+          - generic [ref=e261]:
+            - heading "Delivery & Full-Stack" [level=3] [ref=e262]
+            - list [ref=e263]:
+              - listitem [ref=e264]: Python
+              - listitem [ref=e266]: Next.js
+              - listitem [ref=e268]: TypeScript
+              - listitem [ref=e270]: React
+              - listitem [ref=e272]: Node.js
+              - listitem [ref=e274]: n8n
+              - listitem [ref=e276]: AI Security (OWASP)
+        - link "See AI work in production" [ref=e279] [cursor=pointer]:
+          - /url: /projects/
+      - separator [ref=e280]
+      - generic [ref=e281]:
+        - heading "Have an idea or a project?" [level=2] [ref=e282]
+        - paragraph [ref=e283]: I’m available to collaborate on AI product development, full-stack builds, or technical consulting.
+        - generic [ref=e284]:
+          - link "Contact by email" [ref=e285] [cursor=pointer]:
+            - /url: mailto:danialvadev@proton.me
+          - link "View LinkedIn" [ref=e286] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/dani-alva/
+          - link "Message Telegram" [ref=e287] [cursor=pointer]:
+            - /url: https://t.me/danialvadev
+  - contentinfo [ref=e288]:
+    - generic [ref=e290]:
+      - generic [ref=e291]:
+        - link "mail Mail" [ref=e292] [cursor=pointer]:
+          - /url: mailto:danialvadev@proton.me
+          - generic [ref=e293]: mail
+          - img "Mail" [ref=e294]
+        - link "github GitHub" [ref=e297] [cursor=pointer]:
+          - /url: https://github.com/tekodan
+          - generic [ref=e298]: github
+          - img "GitHub" [ref=e299]
+        - link "linkedin Linkedin" [ref=e301] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/dani-alva/
+          - generic [ref=e302]: linkedin
+          - img "Linkedin" [ref=e303]
+        - link "telegram Telegram" [ref=e305] [cursor=pointer]:
+          - /url: https://t.me/danialvadev
+          - generic [ref=e306]: telegram
+          - img "Telegram" [ref=e307]
+      - paragraph [ref=e309]: © 2026 Dani A. - Full Stack AI Developer. All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=e367] [cursor=pointer]
+  - alert [ref=e371]

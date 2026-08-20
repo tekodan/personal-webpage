@@ -1,0 +1,192 @@
+- generic [active] [ref=f2e1]:
+  - link "Skip to main content" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - link "Dani Alvarez" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - img "Dani Alvarez logo" [ref=f2e6]
+      - navigation "Primary" [ref=f2e7]:
+        - list [ref=f2e8]:
+          - listitem [ref=f2e9]:
+            - link "Home" [ref=f2e10] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f2e11]: "|"
+          - listitem [ref=f2e12]:
+            - link "About" [ref=f2e13] [cursor=pointer]:
+              - /url: /about/
+            - generic [ref=f2e14]: "|"
+          - listitem [ref=f2e15]:
+            - link "Projects" [ref=f2e16] [cursor=pointer]:
+              - /url: /projects/
+            - generic [ref=f2e17]: "|"
+          - listitem [ref=f2e18]:
+            - link "Blog" [ref=f2e19] [cursor=pointer]:
+              - /url: /blog/
+      - generic [ref=f2e20]:
+        - link "Log in" [ref=f2e21] [cursor=pointer]:
+          - /url: /about/
+        - link "Get Started" [ref=f2e22] [cursor=pointer]:
+          - /url: /about/
+  - main [ref=f2e24]:
+    - generic [ref=f2e26]:
+      - heading "About" [level=1] [ref=f2e28]
+      - separator [ref=f2e29]
+      - main [ref=f2e30]:
+        - generic [ref=f2e31]:
+          - complementary [ref=f2e32]:
+            - img "Dani Alvarez profile photo" [ref=f2e33]
+            - generic [ref=f2e34]:
+              - heading "Dani Alvarez" [level=2] [ref=f2e35]
+              - paragraph [ref=f2e36]: AI Full-Stack Developer · RAG & Agentic Systems
+              - paragraph [ref=f2e37]: Python · Next.js · TypeScript · LangChain · RAG
+            - generic [ref=f2e38]:
+              - link "mail Mail" [ref=f2e39] [cursor=pointer]:
+                - /url: mailto:danialvarezdev@proton.me
+                - generic [ref=f2e40]: mail
+                - img "Mail" [ref=f2e41]
+              - link "github GitHub" [ref=f2e44] [cursor=pointer]:
+                - /url: https://github.com/tekodan
+                - generic [ref=f2e45]: github
+                - img "GitHub" [ref=f2e46]
+              - link "linkedin Linkedin" [ref=f2e48] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/dani-alvarez/
+                - generic [ref=f2e49]: linkedin
+                - img "Linkedin" [ref=f2e50]
+              - link "telegram Telegram" [ref=f2e52] [cursor=pointer]:
+                - /url: https://t.me/danialvarezdev
+                - generic [ref=f2e53]: telegram
+                - img "Telegram" [ref=f2e54]
+            - generic [ref=f2e56]:
+              - heading "Skills" [level=3] [ref=f2e57]
+              - generic [ref=f2e58]:
+                - generic [ref=f2e59]:
+                  - paragraph [ref=f2e60]: AI & Agentic
+                  - generic [ref=f2e61]:
+                    - generic [ref=f2e62]: RAG
+                    - generic [ref=f2e63]: LangChain
+                    - generic [ref=f2e64]: Gemma 4
+                    - generic [ref=f2e65]: ChromaDB
+                    - generic [ref=f2e66]: Vector DBs
+                    - generic [ref=f2e67]: Prompt Engineering
+                    - generic [ref=f2e68]: AI Agents
+                    - generic [ref=f2e69]: Function Calling
+                    - generic [ref=f2e70]: Ollama
+                    - generic [ref=f2e71]: n8n
+                    - generic [ref=f2e72]: Model Routing
+                    - generic [ref=f2e73]: Claude Code
+                    - generic [ref=f2e74]: GitHub Copilot
+                    - generic [ref=f2e75]: Aider
+                    - generic [ref=f2e76]: Codex
+                    - generic [ref=f2e77]: DeepSeek
+                    - generic [ref=f2e78]: Llama
+                    - generic [ref=f2e79]: PyTorch
+                    - generic [ref=f2e80]: LoRA
+                - generic [ref=f2e81]:
+                  - paragraph [ref=f2e82]: Cybersecurity & AI Safety
+                  - generic [ref=f2e83]:
+                    - generic [ref=f2e84]: Cybersecurity
+                    - generic [ref=f2e85]: OWASP
+                    - generic [ref=f2e86]: AI Security
+                    - generic [ref=f2e87]: Prompt Injection Defense
+                - generic [ref=f2e88]:
+                  - paragraph [ref=f2e89]: Backend
+                  - generic [ref=f2e90]:
+                    - generic [ref=f2e91]: PHP
+                    - generic [ref=f2e92]: Adobe Commerce
+                    - generic [ref=f2e93]: Laravel
+                    - generic [ref=f2e94]: Python
+                    - generic [ref=f2e95]: FastAPI
+                    - generic [ref=f2e96]: Django
+                    - generic [ref=f2e97]: Node.js
+                    - generic [ref=f2e98]: NestJS
+                - generic [ref=f2e99]:
+                  - paragraph [ref=f2e100]: Frontend
+                  - generic [ref=f2e101]:
+                    - generic [ref=f2e102]: Next.js
+                    - generic [ref=f2e103]: React
+                    - generic [ref=f2e104]: TypeScript
+                    - generic [ref=f2e105]: Tailwind CSS
+                    - generic [ref=f2e106]: Less
+                    - generic [ref=f2e107]: Astro
+                    - generic [ref=f2e108]: Angular
+                - generic [ref=f2e109]:
+                  - paragraph [ref=f2e110]: APIs & Architecture
+                  - generic [ref=f2e111]:
+                    - generic [ref=f2e112]: REST APIs
+                    - generic [ref=f2e113]: GraphQL
+                    - generic [ref=f2e114]: API Design & Architecture
+                    - generic [ref=f2e115]: Distributed Systems
+                - generic [ref=f2e116]:
+                  - paragraph [ref=f2e117]: Cloud & DevOps
+                  - generic [ref=f2e118]:
+                    - generic [ref=f2e119]: AWS
+                    - generic [ref=f2e120]: DigitalOcean
+                    - generic [ref=f2e121]: Vercel
+                    - generic [ref=f2e122]: Docker
+                    - generic [ref=f2e123]: Kubernetes
+                    - generic [ref=f2e124]: CI/CD
+                    - generic [ref=f2e125]: DevOps
+                    - generic [ref=f2e126]: GitHub
+                    - generic [ref=f2e127]: GitLab
+                    - generic [ref=f2e128]: Bitbucket
+                - generic [ref=f2e129]:
+                  - paragraph [ref=f2e130]: Databases
+                  - generic [ref=f2e131]:
+                    - generic [ref=f2e132]: PostgreSQL
+                    - generic [ref=f2e133]: Supabase
+                    - generic [ref=f2e134]: MariaDB
+                    - generic [ref=f2e135]: Oracle
+                    - generic [ref=f2e136]: Meilisearch
+                - generic [ref=f2e137]:
+                  - paragraph [ref=f2e138]: Engineering Practices
+                  - generic [ref=f2e139]:
+                    - generic [ref=f2e140]: Backend Engineering
+                    - generic [ref=f2e141]: SOLID Principles
+                    - generic [ref=f2e142]: Clean Code
+                    - generic [ref=f2e143]: Test-First Mindset
+                    - generic [ref=f2e144]: Unit, Integration, and E2E Testing
+                    - generic [ref=f2e145]: Spec-Driven Development
+                - generic [ref=f2e146]:
+                  - paragraph [ref=f2e147]: Leadership
+                  - generic [ref=f2e148]:
+                    - generic [ref=f2e149]: Scrum Master
+                    - generic [ref=f2e150]: Agile Coach
+          - generic [ref=f2e151]:
+            - generic [ref=f2e152]:
+              - heading "What I do" [level=2] [ref=f2e153]:
+                - generic [ref=f2e154] [cursor=pointer]
+                - text: What I do
+              - paragraph [ref=f2e158]: I'm an AI Full-Stack Developer with 14+ years of experience building production software. I design and ship AI-native products end to end — RAG pipelines, agentic workflows, and the full-stack applications that bring them to life.
+              - paragraph [ref=f2e159]: "My AI work centers on Python, LangChain, ChromaDB, and local models via Ollama. My foundation is deep backend engineering: PHP (Laravel, Adobe Commerce), NestJS, and GraphQL Federation, with production experience on AWS EKS and event-driven architectures. That combination means my AI features are production-grade, not just demos."
+              - heading "How I work" [level=2] [ref=f2e160]:
+                - generic [ref=f2e161] [cursor=pointer]
+                - text: How I work
+              - paragraph [ref=f2e165]: I work as an independent contractor — which means I own the outcome, not just the task. I bring spec-driven planning, a test-first mindset, and clear communication to every engagement. Remote-first, async-friendly, Available to work US Eastern Time (ET) hours.
+              - paragraph [ref=f2e166]: "I build agentic workflows and RAG systems — integrating LLMs with real data sources using LangChain, n8n, and local models via Ollama. Security is part of the design: I apply OWASP and AI safety practices, including prompt injection defense, from day one."
+              - heading "Outside work" [level=2] [ref=f2e167]:
+                - generic [ref=f2e168] [cursor=pointer]
+                - text: Outside work
+              - paragraph [ref=f2e172]: I'm Colombian — still figuring out the locals, but fully committed to the coffee. I'm into personal development, continuous learning, and building things that last — whether that's software or a good morning routine.
+            - link "Download CV (PDF)" [ref=f2e174] [cursor=pointer]:
+              - /url: /api/cv/pdf
+  - contentinfo [ref=f2e175]:
+    - generic [ref=f2e176]:
+      - generic [ref=f2e177]:
+        - link "mail Mail" [ref=f2e178] [cursor=pointer]:
+          - /url: mailto:danialvarezdev@proton.me
+          - generic [ref=f2e179]: mail
+          - img "Mail" [ref=f2e180]
+        - link "github GitHub" [ref=f2e183] [cursor=pointer]:
+          - /url: https://github.com/tekodan
+          - generic [ref=f2e184]: github
+          - img "GitHub" [ref=f2e185]
+        - link "linkedin Linkedin" [ref=f2e187] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/dani-alvarez/
+          - generic [ref=f2e188]: linkedin
+          - img "Linkedin" [ref=f2e189]
+        - link "telegram Telegram" [ref=f2e191] [cursor=pointer]:
+          - /url: https://t.me/danialvarezdev
+          - generic [ref=f2e192]: telegram
+          - img "Telegram" [ref=f2e193]
+      - paragraph [ref=f2e195]: © 2026 Dani A. — Full Stack AI Developer. All rights reserved.

@@ -123,17 +123,106 @@ const brandLogos = [
   { name: 'Porsche Colombia', src: '/static/logos/porsche.png', invert: true },
   { name: 'Converse Chile', src: '/static/logos/converse.png', invert: true },
   { name: 'North Face', src: '/static/logos/north-face.png', invert: true },
-  { name: 'Gollo', src: '/static/logos/gollo.png', invert: true },
   { name: 'RadioShack', src: '/static/logos/radioshack.png', wide: true, invert: true },
   { name: 'Gobernación de Nariño', src: '/static/logos/gobernacion-de-narino.png', invert: true },
   { name: 'Compuconta', src: '/static/logos/compuconta.svg', invert: true },
   { name: 'ClinicalApp', src: '/static/logos/clinical-app.png', wide: true, invert: true },
 ]
 
+const services = [
+  {
+    title: 'RAG Pipelines',
+    description:
+      'Production-grade retrieval systems on LangChain + ChromaDB — chunking, embeddings, evals, and streaming.',
+    icon: 'brain',
+  },
+  {
+    title: 'Agentic Systems',
+    description:
+      'Function-calling agents that plan, use tools, and act. Local models via Ollama, model routing included.',
+    icon: 'circuit',
+  },
+  {
+    title: 'Full-Stack Delivery',
+    description:
+      'Next.js + TypeScript front-ends, headless APIs, and infra so intelligence ships end to end.',
+    icon: 'layers',
+  },
+  {
+    title: 'AI Workflow Automation',
+    description:
+      'n8n, webhooks, and bespoke glue — turning repetitive work into reliable, auditable flows.',
+    icon: 'cog',
+  },
+]
+
+const ServiceIcon = ({ name }: { name: string }) => {
+  const common = 'h-6 w-6'
+  switch (name) {
+    case 'brain':
+      return (
+        <svg
+          className={common}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        >
+          <path d="M9 4a3 3 0 00-3 3v.5A3 3 0 004 10v2a3 3 0 001.5 2.6V16a3 3 0 003 3h1V4H9z" />
+          <path d="M15 4a3 3 0 013 3v.5A3 3 0 0120 10v2a3 3 0 01-1.5 2.6V16a3 3 0 01-3 3h-1V4h1z" />
+        </svg>
+      )
+    case 'circuit':
+      return (
+        <svg
+          className={common}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        >
+          <circle cx="6" cy="6" r="2" />
+          <circle cx="18" cy="6" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="6" cy="18" r="2" />
+          <circle cx="18" cy="18" r="2" />
+          <path d="M8 6h8M7.5 7.5L11 10.5M16.5 7.5L13 10.5M11 14l-3.5 3M13 14l3.5 3" />
+        </svg>
+      )
+    case 'layers':
+      return (
+        <svg
+          className={common}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        >
+          <path d="M12 3l9 5-9 5-9-5 9-5z" />
+          <path d="M3 13l9 5 9-5" />
+          <path d="M3 17l9 5 9-5" />
+        </svg>
+      )
+    default:
+      return (
+        <svg
+          className={common}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        >
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z" />
+        </svg>
+      )
+  }
+}
+
 export const metadata = genPageMetadata({
   title: 'AI Full-Stack Developer · RAG & Agentic Systems',
   description:
-    'Dani Alva — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms. Available for remote freelance work.',
+    'Dani Alvarez — AI Full-Stack Developer with 14+ years building AI-native products end to end: RAG pipelines, agentic systems, and production-grade full-stack platforms. Available for remote freelance work.',
 })
 
 export default function HomeLandingPage() {
@@ -170,48 +259,62 @@ export default function HomeLandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <div className="brand-section-bg text-brand-cream-100 relative right-1/2 left-1/2 -mx-[50vw] w-screen overflow-hidden">
-        <div className="absolute top-0 left-1/2 h-[26rem] w-[30rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(212,165,116,0.10)_0%,_rgba(212,165,116,0)_72%)] blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-6 sm:px-8 xl:px-10">
-          <section className="relative isolate overflow-hidden py-16 md:py-20">
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(1200px_500px_at_50%_-10%,_rgba(212,165,116,0.10),_transparent)]" />
-            <p className="text-accent text-center text-[11px] font-medium tracking-[0.3em] uppercase">
-              {name} · AI Full-Stack Developer
-            </p>
-            <h1 className="mx-auto mt-4 max-w-4xl text-center text-4xl leading-[1.05] font-semibold tracking-[-0.025em] text-white md:text-5xl xl:text-6xl">
-              I build production AI systems — not just demos.
-            </h1>
-            <p className="mx-auto mt-6 max-w-[50ch] text-center text-base leading-relaxed text-white/70 md:text-lg">
-              RAG, agents and full-stack products, backed by 14+ years shipping production software
-              across retail, SaaS, and civic tech.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              {appConfig.features.projects && (
-                <Link
-                  href="/projects"
-                  className="bg-accent-dim text-on-accent focus-visible:outline-accent px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110"
-                >
-                  View selected work
-                </Link>
-              )}
-              <a
-                href="https://enola.ronin.com.co"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40"
-              >
-                See Enola in action
-              </a>
+          <section className="relative isolate overflow-hidden py-12 md:py-16">
+            <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src={`${process.env.BASE_PATH || ''}/static/images/imgtype.png`}
+                  alt={`${name} brain logo`}
+                  width={1200}
+                  height={900}
+                  className="h-auto w-56 sm:w-72 md:w-80 lg:w-96"
+                  priority
+                />
+              </div>
+
+              <div className="text-center md:text-left">
+                <h1 className="text-4xl leading-[1.1] font-semibold tracking-tight md:text-5xl lg:text-6xl">
+                  <span className="text-brand-bronze-400">Smart architecture,</span>{' '}
+                  <span className="text-brand-cream-200">powerful AI solutions.</span>
+                </h1>
+                <p className="text-brand-cream-200 mt-5 max-w-[55ch] text-sm leading-relaxed md:text-base">
+                  RAG, agents and full-stack products — backed by 14+ years shipping production
+                  software across retail, SaaS, and civic tech. Available for remote projects.
+                </p>
+                <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row md:justify-start">
+                  <Link
+                    href="/about"
+                    className="bg-brand-slate-500 hover:bg-brand-slate-400 border-brand-slate-400 border px-5 py-2.5 text-sm font-medium text-white transition duration-200 ease-out"
+                  >
+                    Get Started
+                  </Link>
+                  <Link
+                    href="/projects"
+                    className="border-brand-cream-200/40 hover:border-brand-cream-200 border px-5 py-2.5 text-sm font-medium text-white transition duration-200 ease-out"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="mt-12">
-              <CoverflowCarousel slides={coverflowSlides} />
-            </div>
-            <p className="mt-8 inline-flex w-full items-center justify-center gap-2 text-center text-sm text-white/60">
-              <span className="bg-accent h-2 w-2 rounded-full" aria-hidden="true" />
+
+            <p className="text-brand-cream-200 mt-10 inline-flex w-full items-center justify-center gap-2 text-center text-sm">
+              <span className="bg-brand-bronze-400 h-2 w-2 rounded-full" aria-hidden="true" />
               <span role="status">Available for remote projects</span>
             </p>
           </section>
 
-          <hr className="border-0 border-t border-white/10" />
+          <hr className="border-brand-line border-0 border-t" />
+
+          <section className="py-12 md:py-16">
+            <h2 className="text-brand-bronze-400 mb-8 text-center text-2xl font-semibold tracking-tight md:text-3xl">
+              Our Projects
+            </h2>
+            <CoverflowCarousel slides={coverflowSlides} />
+          </section>
+
+          <hr className="border-brand-line border-0 border-t" />
 
           <Stats
             items={[
@@ -222,16 +325,16 @@ export default function HomeLandingPage() {
             ]}
           />
 
-          <hr className="border-0 border-t border-white/10" />
+          <hr className="border-brand-line border-0 border-t" />
 
           <section className="py-10 md:py-12">
-            <p className="text-accent mb-8 text-center text-[11px] font-medium tracking-[0.3em] uppercase">
+            <p className="text-brand-bronze-400 mb-8 text-center text-[11px] font-medium tracking-[0.3em] uppercase">
               Brands I have worked with
             </p>
             <LogoMarquee logos={brandLogos} />
           </section>
 
-          <hr className="border-0 border-t border-white/10" />
+          <hr className="border-brand-line border-0 border-t" />
 
           <section className="py-16 md:py-20">
             <div className="mx-auto max-w-3xl text-center">
@@ -241,13 +344,13 @@ export default function HomeLandingPage() {
                   alt={`${name} profile photo`}
                   width={144}
                   height={144}
-                  className="mx-auto h-36 w-36 rounded-full border border-white/15 object-cover"
+                  className="border-brand-line mx-auto h-36 w-36 rounded-full border object-cover"
                 />
               )}
               <h2 className="mt-6 text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 {name} — {occupation}
               </h2>
-              <p className="mx-auto mt-4 max-w-[60ch] text-base leading-relaxed text-white/70">
+              <p className="text-brand-cream-200 mx-auto mt-4 max-w-[60ch] text-base leading-relaxed">
                 {aboutSummary}
               </p>
               <div className="mx-auto mt-8 grid max-w-xl gap-3 text-left sm:grid-cols-3">
@@ -256,12 +359,12 @@ export default function HomeLandingPage() {
                   ['Production-Grade Full-Stack', 'APIs, microservices, headless'],
                   ['AI Workflow Automation', 'LangChain, n8n, local models via Ollama'],
                 ].map(([title, body]) => (
-                  <div key={title} className="rounded-lg border border-white/10 bg-white/5 p-4">
+                  <div key={title} className="bg-brand-elev border-brand-line border p-4">
                     <h3 className="flex items-start gap-2 text-sm leading-relaxed font-semibold text-white">
-                      <span className="bg-accent mt-[0.55rem] h-px w-3 shrink-0" />
+                      <span className="bg-brand-bronze-400 mt-[0.55rem] h-px w-3 shrink-0" />
                       {title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">{body}</p>
+                    <p className="text-brand-cream-200 mt-2 text-sm leading-relaxed">{body}</p>
                   </div>
                 ))}
               </div>
@@ -269,7 +372,7 @@ export default function HomeLandingPage() {
                 <div className="mt-8">
                   <Link
                     href="/about"
-                    className="text-accent inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
+                    className="text-brand-bronze-400 inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
                   >
                     Read full About page
                   </Link>
@@ -278,90 +381,27 @@ export default function HomeLandingPage() {
             </div>
           </section>
 
-          <hr className="border-0 border-t border-white/10" />
-
-          <section className="py-16 md:py-20">
-            <h2 className="text-accent text-center text-xs font-medium tracking-[0.3em] uppercase md:text-sm">
-              Full-Stack + AI
-            </h2>
-            <p className="mx-auto mt-4 max-w-[60ch] text-center text-base leading-relaxed text-white/70">
-              A complete stack — from agentic AI to production interfaces — so intelligence ships
-              end to end.
-            </p>
-            <div className="mx-auto mt-10 grid max-w-4xl gap-3 md:grid-cols-3">
-              {[
-                {
-                  layer: 'Agentic AI',
-                  items: ['RAG', 'LangChain', 'AI Agents', 'Function Calling', 'Gemma 4', 'Ollama'],
-                },
-                {
-                  layer: 'Data & Retrieval',
-                  items: ['ChromaDB', 'Vector DBs', 'Prompt Engineering', 'Model Routing', 'Evals'],
-                },
-                {
-                  layer: 'Delivery & Full-Stack',
-                  items: [
-                    'Python',
-                    'Next.js',
-                    'TypeScript',
-                    'React',
-                    'Node.js',
-                    'n8n',
-                    'AI Security (OWASP)',
-                  ],
-                },
-              ].map((group) => (
-                <div key={group.layer} className="rounded-xl border border-white/10 bg-white/5 p-5">
-                  <h3 className="text-accent text-[11px] font-medium tracking-[0.25em] uppercase">
-                    {group.layer}
-                  </h3>
-                  <ul className="mt-4 space-y-2">
-                    {group.items.map((tech) => (
-                      <li
-                        key={tech}
-                        className="flex items-start gap-2 text-sm leading-relaxed text-white/75"
-                      >
-                        <span className="mt-[0.55rem] h-px w-3 shrink-0 bg-white/30" />
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            {appConfig.features.projects && (
-              <div className="mt-10 text-center">
-                <Link
-                  href="/projects"
-                  className="text-accent inline-flex text-sm font-medium underline-offset-4 transition duration-200 ease-out hover:underline"
-                >
-                  See AI work in production
-                </Link>
-              </div>
-            )}
-          </section>
-
-          <hr className="border-0 border-t border-white/10" />
+          <hr className="border-brand-line border-0 border-t" />
 
           {appConfig.features.contact && (
             <section className="py-16 md:py-20">
               <h2 className="text-center text-2xl font-semibold tracking-tight text-white md:text-3xl">
                 {contactTitle}
               </h2>
-              <p className="mx-auto mt-4 max-w-[65ch] text-center text-base leading-relaxed text-white/70">
+              <p className="text-brand-cream-200 mx-auto mt-4 max-w-[65ch] text-center text-base leading-relaxed">
                 {contactSummary}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                 <Link
                   href={`mailto:${email}`}
-                  className="bg-accent-dim text-on-accent focus-visible:outline-accent w-full px-5 py-3 text-sm font-medium transition duration-200 ease-out hover:brightness-110 sm:w-auto"
+                  className="bg-brand-slate-500 hover:bg-brand-slate-400 border-brand-slate-400 border px-5 py-2.5 text-sm font-medium text-white transition duration-200 ease-out sm:w-auto"
                 >
                   Contact by email
                 </Link>
                 {linkedin && (
                   <Link
                     href={linkedin}
-                    className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                    className="border-brand-cream-200/40 hover:border-brand-cream-200 border px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out sm:w-auto"
                   >
                     View LinkedIn
                   </Link>
@@ -369,7 +409,7 @@ export default function HomeLandingPage() {
                 {telegram && (
                   <Link
                     href={telegram}
-                    className="w-full border border-white/20 px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out hover:border-white/40 sm:w-auto"
+                    className="border-brand-cream-200/40 hover:border-brand-cream-200 border px-5 py-3 text-sm font-medium text-white transition duration-200 ease-out sm:w-auto"
                   >
                     Message Telegram
                   </Link>

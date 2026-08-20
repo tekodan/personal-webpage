@@ -1,20 +1,20 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Dani Alva',
-  author: 'Dani Alva',
-  headerTitle: 'Dani Alva',
+  title: 'Dani Alvarez',
+  author: 'Dani Alvarez',
+  headerTitle: 'Dani Alvarez',
   description:
     'AI Full-Stack Developer with 14+ years building AI-native products end to end — RAG pipelines, agentic systems, and production-grade full-stack platforms.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://danialva.com',
-  siteRepo: 'https://github.com/tekodan/danialva.com',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/new-logo.png`,
+  siteUrl: 'https://danialvarez.com',
+  siteRepo: 'https://github.com/tekodan/danialvarez.com',
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/isotype.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'tekodan@gmail.com',
   github: 'https://github.com/tekodan',
-  linkedin: 'https://www.linkedin.com/in/dani-alva/',
-  telegram: 'https://t.me/danialvadev',
+  linkedin: 'https://www.linkedin.com/in/dani-alvarez/',
+  telegram: 'https://t.me/danialvarezdev',
   bluesky: 'https://bsky.app/',
   locale: 'en-US',
   // set to true if you want a navbar fixed to the top
